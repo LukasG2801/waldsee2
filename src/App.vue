@@ -427,7 +427,7 @@ a {
 
 .fab-menu{
     position: fixed;
-    bottom: 70vh;
+    top: 20vh;
     right: 0;
     z-index: 99;
 }

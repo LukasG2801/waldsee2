@@ -1,5 +1,4 @@
 # Waldsee-Terrasse Haslach Projekt
-test repository
 
 ## Description
 This is a vue web project. 
