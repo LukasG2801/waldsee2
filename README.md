@@ -1,3 +1,9 @@
-# waldsee2
+# Waldsee-Terrasse Haslach Projekt
 test repository
-test
+
+## Technical Details
+- Vue Web project
+- Wordpress as headless CMS
+
+### Usage
+- npm run serve
