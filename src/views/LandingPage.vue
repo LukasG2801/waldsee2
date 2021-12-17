@@ -15,6 +15,13 @@
             </div>
         </v-container>
 
+        <v-lazy
+            v-model="foodPartActive"
+            :options="{
+                threshold: .5
+            }"
+            transition="fade-transition"
+        >
         <v-container
             fluid
             class="food-intro d-flex justify-center align-center flex-row"
@@ -26,9 +33,11 @@
                 <p class="food-intro-text-title">Unsere Spezialitäten</p>
                 <p class="food-intro-text-title" color="seccondary" style="font-size: 1.5rem">●</p>
                 <p class="food-intro-text-subtitle">
-                    Unsere Küche zeichnet sich aus durch Regionalität und Saisonalität
+                    Neben regionalen Spezialitäten stehen auch saisonale Gerichte auf unserer
+                    ständig aktualisierten Karte.
                     <br/>
-                    Neben unserer Speisekarte bieten wir auch täglich wechselnde Gerichte an
+                    Auf jeden Fall werden Sie in unserer umfangreichen Speisekarte das finden,
+                    wonach Gaumen und Seele verlangen.
                 </p>
                 <v-btn
                     outlined
@@ -42,6 +51,7 @@
                 </v-btn>
             </div>
         </v-container>
+        </v-lazy>
         
         <v-container 
             fluid
@@ -98,7 +108,8 @@
 
     export default {
         data: () => ({
-            rating_carousel: 0
+            rating_carousel: 0,
+            foodPartActive: false
         }),
 
         computed: {
@@ -157,7 +168,7 @@
 .welcome-screen {
     height: 100vh;
     width: 100%;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/banner2.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1) ), url('../assets/banner2.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

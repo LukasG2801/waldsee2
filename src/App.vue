@@ -107,6 +107,9 @@
           @click="drawer = !drawer"
         ></v-app-bar-nav-icon>
 
+        <router-link
+          to="/"
+        >
         <v-img
           class="mx-2 ml-10"
           src="./assets/logo_black.png"
@@ -115,6 +118,7 @@
           contain
           v-show="appbar.logo"
         />
+        </router-link>
 
         <v-spacer/>
         
@@ -128,7 +132,7 @@
           >
             mdi-clock
           </v-icon>
-          Geöffnet
+          {{ $t('AppBar.open') }}
         </v-chip>
 
         <v-chip
@@ -148,16 +152,62 @@
       
       </v-app-bar>
 
-      <v-layout column class="fab-menu">
-          <v-btn dark color="primary" height="50px" tile>
-            <v-icon>mdi-phone-outline</v-icon>
-          </v-btn>
-          <v-btn dark color="secondary" height="50px" tile>
-            <v-icon>mdi-email</v-icon>
-          </v-btn>
-          <v-btn dark color="secondary" height="50px" tile>
-            <v-icon>mdi-map-marker</v-icon>
-          </v-btn>
+      <transition name="fade">
+      <v-layout 
+        column 
+        class="fab-menu"
+        v-show="sideMenu"
+      >
+          <v-tooltip left>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn 
+                dark 
+                color="primary" 
+                height="50px" 
+                tile
+                @click="onPhoneCallPressed"
+                v-bind="attrs"
+                v-on="on"
+              >
+                <v-icon>mdi-phone-outline</v-icon>
+              </v-btn>
+            </template>
+            <span>Anrufen</span>
+          </v-tooltip>
+
+          <v-tooltip left>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn 
+                dark 
+                color="secondary" 
+                height="50px" 
+                tile
+                @click="onOpenMail"
+                v-bind="attrs"
+                v-on="on"
+              >
+                <v-icon>mdi-email</v-icon>
+              </v-btn>
+            </template>
+            <span>Email</span>
+          </v-tooltip>
+
+          <v-tooltip left>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn 
+                dark 
+                color="secondary" 
+                height="50px" 
+                tile
+                @click="onOpenMaps"
+                v-bind="attrs"
+                v-on="on"
+              >
+                <v-icon>mdi-map-marker</v-icon>
+              </v-btn>
+            </template>
+            <span>Maps</span>
+          </v-tooltip>
 
           <v-tooltip left>
             <template v-slot:activator="{ on, attrs }">
@@ -188,7 +238,8 @@
                 v-bind="attrs"
                 v-on="on"
               >
-                <country-flag country="de" size="small"/>
+                <!-- <country-flag country="de" size="small"/> -->
+                <p>DE</p>
               </v-btn>
             </template>
           
@@ -196,6 +247,8 @@
             <v-list-item
               v-for="language in languages"
               :key="language.code"
+              link
+              @click="onChangeLanguage"
             >
               <v-list-item-title>
                 {{ language.code }}
@@ -204,6 +257,7 @@
           </v-list>
         </v-menu>
       </v-layout>
+      </transition>
 
       <v-btn
         fab
@@ -233,25 +287,11 @@
         fixed
         class="footer"
       >
-        <!-- <v-layout>
-          <v-container
-            class="d-flex justify-content"
-          >
-            <p>Impressum</p>
-          </v-container>
-        </v-layout> -->
-        <!-- <v-btn
-          icon
-          dark
-        >
-          <v-icon>mdi-phone-outline</v-icon>
-        </v-btn> -->
       </v-footer>
     </v-app>          
 </template>
 
 <script>
-// import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
@@ -270,9 +310,9 @@ export default {
       { text: 'IMPRESSUM', path: '/food' },
     ],
     languages: [
-      { code: 'de'},
-      { code: 'gb'},
-      { code: 'fr'}
+      { code: 'DE'},
+      { code: 'EN'},
+      { code: 'FR'}
     ],
     fab: false, 
     hidden: false,
@@ -286,7 +326,8 @@ export default {
       "../assets/food1.jpg",
       "../assets/banner_cropped.jpg"
     ],
-    isLoading: false
+    isLoading: false,
+    sideMenu: false
   }),
 
   methods: {
@@ -296,6 +337,11 @@ export default {
 
     onOpenMail() {
       window.location.href='mailto:info@waldsee-terrasse.de'
+    },
+
+    onOpenMaps() {
+      // window.location.href="https://goo.gl/maps/QDcXkUCpyon7ktaW8"
+      window.open("https://goo.gl/maps/QDcXkUCpyon7ktaW8")
     },
 
     onScroll(e) {
@@ -317,12 +363,18 @@ export default {
         this.appbar.dark = false
         this.appbar.logo = true
         this.appbar.chip_phone_textcolor = 'black'
+        this.sideMenu = true
       }else if (top === 0){
         this.appbar.color="rgba(222,222,222,0.4) !important;"
         this.appbar.dark = true
         this.appbar.logo = false
         this.appbar.chip_phone_textcolor = 'white'
+        this.sideMenu = false
       }
+    },
+
+    onChangeLanguage(e){
+      console.log(e)
     }
 
   },
@@ -430,5 +482,14 @@ a {
     top: 20vh;
     right: 0;
     z-index: 99;
+    opacity: 0.9;
+}
+
+.fade-enter-active {
+  transition: opacity 1s;
+}
+
+.fade-enter {
+  opacity: 0;
 }
 </style>
