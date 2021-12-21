@@ -6,10 +6,10 @@
     >
         <v-container
             fluid
-            class="food-banner d-flex justify-center"
+            class="food-banner d-flex"
             fill-height
         >
-            <v-container class="d-flex justify-center align-center flex-column">
+            <v-container class="d-flex flex-column">
                 <p class="food-banner-subtitle">Entdecken Sie unsere kulinarischen Köstlichkeiten</p>
             </v-container>
         </v-container>
@@ -22,8 +22,9 @@
             <v-list
                 v-for="categorie in dish_categories"
                 :key="categorie.id"
+                :ref="categorie.id"
+                :id="categorie.id"
             >
-                <!-- <v-subheader>{{ categorie.name }}</v-subheader> -->
                 <v-toolbar-title
                     class="menu-categorie-title"
                 >
@@ -31,17 +32,25 @@
                 </v-toolbar-title>
                 
                 <v-list-item
-                    v-for="item in dishes"
-                    :key="item.name"
-                    :v-if="itemInCategorie(categorie.id, item.categories)"
+                    v-for="dish in categorie.dishes"
+                    :key="dish.id"
+                    :v-show="itemInCategorie(categorie.id)"
                 >
                     <v-list-item-content>
-                        <v-list-item-title v-text="item.title.rendered"></v-list-item-title>
-                        <v-list-item-subtitle>{{ item.acf.Beilagen }}</v-list-item-subtitle>
-                        <v-list-item-subtitle>{{ item.acf.Preis }} €</v-list-item-subtitle>
+                        <v-list-item-title v-text="dish.title.rendered"></v-list-item-title>
+                        <v-list-item-subtitle>{{ dish.acf.Beilagen }}</v-list-item-subtitle>
+                        <v-list-item-subtitle>{{ dish.acf.Preis }} €</v-list-item-subtitle>
                     </v-list-item-content>
                 </v-list-item>
             </v-list>
+
+            <!-- <div
+                v-for="categorie in dish_categories"
+                :key="categorie.id"
+            >
+                <h3>{{ categorie.name }}</h3>
+                <p v-for="item in dishes" :key="item.name">{{ item.title.rendered }}</p>
+            </div> -->
         </v-container>
 
         <transition name="fade">
@@ -64,7 +73,7 @@
                         v-for="item in dish_categories"
                         :key="item.id"
                         link
-                        :href="'/food/' + item.slug"
+                        @click="goto(item.id)"
                     >
                         <v-list-item-icon>
                             <v-icon small>mdi-pound</v-icon>
@@ -90,6 +99,7 @@
             sideMenu: {
                 visible: false,
             },
+            false: false
         }),
         
         computed: {
@@ -106,6 +116,7 @@
             async fetchDishes(){
                 let response = await this.$http.get('/wp-json/wp/v2/gerichte')
                 this.$store.commit('dishes/set_dishes', response.data)
+                this.fetchDishCategories()
             },
 
             /**
@@ -117,8 +128,31 @@
 
                 response.data.forEach(item => {
                     if(item.parent != 0) {
+                        this._getConcerningDishes(item)
                         this.dish_categories.push(item)
                     }
+                })
+
+                console.log(this.dish_categories)
+            },
+
+            _getConcerningDishes(categorie) {
+                let aItems = []
+                if(this.dishes){
+                    console.log(this.dishes)
+                    this.dishes.forEach(dish => {
+                        if(dish.categories.includes(categorie.id)){
+                            aItems.push(dish)
+                        }
+                    })
+                }
+                categorie.dishes = aItems
+                return categorie
+            },
+
+            goto(id) {
+                document.getElementById(id).scrollIntoView({
+                    behavior: 'smooth'
                 })
             },
 
@@ -156,14 +190,13 @@
                 }            
             },
 
-            itemInCategorie(categorie, itemcategories){
-                console.log(itemcategories.includes(categorie))
-               return itemcategories.includes(categorie)
+            itemInCategorie(categorie){
+                return categorie
             }
          },
 
         created () {
-            this.fetchDishCategories()
+            // this.fetchDishCategories()
             this.fetchDishes()
             this.mergeCategories()
         }

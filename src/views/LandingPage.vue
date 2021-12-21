@@ -11,7 +11,7 @@
         >
             <div class="d-flex justify-center align-center flex-column">
                 <v-img src="../assets/logo_white.png" max-width="400px"></v-img>
-                <p class="slogan-subtitle">"Gastfreundschaft ist nicht einfach nur ein Wort, sondern vielmehr eine Lebenseinstellung"</p>
+                <p class="slogan-subtitle">"{{ $t('LandingPage.slogan') }}"</p>
             </div>
         </v-container>
 
@@ -30,14 +30,12 @@
             <img src="../assets/food1.jpg" height="350px"/>
 
             <div class="food-intro-text">
-                <p class="food-intro-text-title">Unsere Spezialitäten</p>
+                <p class="food-intro-text-title">{{ $t('LandingPage.food.title') }}</p>
                 <p class="food-intro-text-title" color="seccondary" style="font-size: 1.5rem">●</p>
                 <p class="food-intro-text-subtitle">
-                    Neben regionalen Spezialitäten stehen auch saisonale Gerichte auf unserer
-                    ständig aktualisierten Karte.
+                    {{ $t('LandingPage.food.subtitle1') }}
                     <br/>
-                    Auf jeden Fall werden Sie in unserer umfangreichen Speisekarte das finden,
-                    wonach Gaumen und Seele verlangen.
+                    {{ $t('LandingPage.food.subtitle2') }}
                 </p>
                 <v-btn
                     outlined
@@ -47,7 +45,7 @@
                     <v-icon left>
                         mdi-silverware
                     </v-icon>
-                    Mehr dazu ...
+                    {{ $t('LandingPage.food.button.menu')}}
                 </v-btn>
             </div>
         </v-container>

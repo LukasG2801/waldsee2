@@ -1,3 +1,8 @@
 {
-    "AppBar.open": "Ouvert"
+    "AppBar.open": "Ouvert",
+    "LandingPage.slogan": "L'hospitalité n'est pas qu'un mot, c'est un mode de vie",
+    "LandingPage.food.title": "Nos spécialités",
+    "LandingPage.food.subtitle1": "En plus des spécialités régionales, il y a aussi des plats de saison sur notre carte constamment mise à jour",
+    "LandingPage.food.subtitle2": "Dans tous les cas, vous trouverez ce que votre palais et votre âme désirent dans notre vaste menu.",
+    "LandingPage.food.button.menu": "Au menu"
 }

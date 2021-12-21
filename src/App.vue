@@ -103,8 +103,8 @@
       >
         
         <v-app-bar-nav-icon
-          x-large
           @click="drawer = !drawer"
+          x-large
         ></v-app-bar-nav-icon>
 
         <router-link
@@ -218,6 +218,7 @@
                 tile
                 v-bind="attrs"
                 v-on="on"
+                to="/food"
               >
                 <v-icon>mdi-silverware</v-icon>
               </v-btn>
@@ -228,7 +229,7 @@
           <v-menu
             rounded="false"
             offset-x
-          >
+          >          
             <template v-slot:activator="{ attrs, on }">
               <v-btn 
                 dark 
@@ -239,21 +240,26 @@
                 v-on="on"
               >
                 <!-- <country-flag country="de" size="small"/> -->
-                <p>DE</p>
+                <p>{{ $i18n.locale }}</p>
               </v-btn>
             </template>
           
-          <v-list>
+          <v-list
+          >
+            <v-list-item-group
+              v-model="$i18n.locale"
+            >
             <v-list-item
-              v-for="language in languages"
-              :key="language.code"
+              v-for="(lang, i) in languages"
+              :key="`Lang${i}`"
+              :value="lang"
               link
-              @click="onChangeLanguage"
             >
               <v-list-item-title>
-                {{ language.code }}
+                {{ lang }}
               </v-list-item-title>
             </v-list-item>
+            </v-list-item-group>
           </v-list>
         </v-menu>
       </v-layout>
@@ -277,8 +283,10 @@
           fluid
           class="ma-0 pa-0"
         >
+          <transition name="fade" mode="out-in">
           <router-view
           onscroll="onScrollMainContainer"/>
+          </transition>
         </v-container>
       </v-main>
 
@@ -288,6 +296,14 @@
         class="footer"
       >
       </v-footer>
+
+      <v-overlay :value="isLoading">
+        <v-progress-circular
+          indeterminate
+          size="64"
+        >
+      </v-progress-circular>
+    </v-overlay>
     </v-app>          
 </template>
 
@@ -310,23 +326,18 @@ export default {
       { text: 'IMPRESSUM', path: '/food' },
     ],
     languages: [
-      { code: 'DE'},
-      { code: 'EN'},
-      { code: 'FR'}
+      'de',
+      'en',
+      'fr'
     ],
+    selectedLang: '',
     fab: false, 
     hidden: false,
     drawer: false,
     imagesToPreload: [
-      "./assets/logo_white.png",
-      "../assets/logo_black.png",
-      "../assets/welcome.jpg",
-      "../assets/location1.jpg",
-      "../assets/food_banner.jpg",
-      "../assets/food1.jpg",
-      "../assets/banner_cropped.jpg"
+      "http://localhost:8080/assets/logo_white.png",
     ],
-    isLoading: false,
+    isLoading: true,
     sideMenu: false
   }),
 
@@ -340,7 +351,6 @@ export default {
     },
 
     onOpenMaps() {
-      // window.location.href="https://goo.gl/maps/QDcXkUCpyon7ktaW8"
       window.open("https://goo.gl/maps/QDcXkUCpyon7ktaW8")
     },
 
@@ -373,8 +383,8 @@ export default {
       }
     },
 
-    onChangeLanguage(e){
-      console.log(e)
+    onChangeLanguage(){
+      this.$i18n.locale = 'en'
     }
 
   },
@@ -383,10 +393,11 @@ export default {
     // 'Footer': Footer
   },
 
-  mounted() {
+  created() {
   },
 
-  created() {
+  mounted() {
+    this.isLoading = false
   }
 };
 
@@ -492,4 +503,5 @@ a {
 .fade-enter {
   opacity: 0;
 }
+
 </style>

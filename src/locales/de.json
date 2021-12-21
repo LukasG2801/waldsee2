@@ -1,3 +1,8 @@
 {
-    "AppBar.open": "Geöffnet"
+    "AppBar.open": "Geöffnet",
+    "LandingPage.slogan": "Gastfreundschaft ist nicht einfach nur ein Wort, sondern vielmehr eine Lebenseinstellung",
+    "LandingPage.food.title": "Unsere Spezialitäten",
+    "LandingPage.food.subtitle1": "Neben regionalen Spezialitäten stehen auch saisonale Gerichte auf unserer ständig aktualisierten Karte.",
+    "LandingPage.food.subtitle2": "Auf jeden Fall werden Sie in unserer umfangreichen Speisekarte das finden, wonach Gaumen und Seele verlangen.",
+    "LandingPage.food.button.menu": "Zur Speisekarte"
 }
