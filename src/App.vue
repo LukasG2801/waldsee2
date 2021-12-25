@@ -285,17 +285,12 @@
         >
           <transition name="fade" mode="out-in">
           <router-view
-          onscroll="onScrollMainContainer"/>
+            onscroll="onScrollMainContainer"
+          />
           </transition>
+          <Footer/>
         </v-container>
       </v-main>
-
-      <v-footer 
-        app 
-        fixed
-        class="footer"
-      >
-      </v-footer>
 
       <v-overlay :value="isLoading">
         <v-progress-circular
@@ -308,6 +303,7 @@
 </template>
 
 <script>
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
@@ -335,11 +331,21 @@ export default {
     hidden: false,
     drawer: false,
     imagesToPreload: [
-      "http://localhost:8080/assets/logo_white.png",
+      'logo_white.png',
+      'banner1.jpg',
+      'banner2.jpg',
+      'banner3.jpg',
+      'food1.jpg',
+      'logo_black.png',
+      'welcome.jpg'
     ],
     isLoading: true,
     sideMenu: false
   }),
+
+  components: {
+    'Footer': Footer
+  },
 
   methods: {
     onPhoneCallPressed() {
@@ -385,19 +391,33 @@ export default {
 
     onChangeLanguage(){
       this.$i18n.locale = 'en'
+    },
+
+    loadImage() {
+      let iImagesLoaded = 0
+
+      this.imagesToPreload.forEach(imageurl => {
+        let oImage = new Image()
+        oImage.src = require("./assets/" + imageurl)
+        
+        oImage.onload = () => {
+          iImagesLoaded++;
+
+          if(iImagesLoaded === this.imagesToPreload.length) {
+            console.log("loaded")
+            this.isLoading = false
+          }
+        }
+      })
     }
 
-  },
-
-  components: {
-    // 'Footer': Footer
   },
 
   created() {
   },
 
   mounted() {
-    this.isLoading = false
+    this.loadImage()
   }
 };
 
@@ -416,11 +436,6 @@ li {
 
 a {
   text-decoration: none;
-}
-
-.footer{
-  background: transparent !important;
-  opacity: 0.8;
 }
 
 .side-menu-menu-container {

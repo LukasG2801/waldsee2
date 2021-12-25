@@ -12,8 +12,8 @@ Vue.config.productionTip = false
 Vue.component('country-flag', CountryFlag)
 
 const base = axios.create({
-    // baseURL: 'http://192.168.178.21/wordpress'
-    baseURL: 'http://127.0.0.1/wordpress'
+    baseURL: 'http://192.168.178.21/wordpress'
+        // baseURL: 'http://127.0.0.1/wordpress'
 })
 
 Vue.prototype.$http = base

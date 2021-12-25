@@ -41,16 +41,10 @@
                         <v-list-item-subtitle>{{ dish.acf.Beilagen }}</v-list-item-subtitle>
                         <v-list-item-subtitle>{{ dish.acf.Preis }} €</v-list-item-subtitle>
                     </v-list-item-content>
+
                 </v-list-item>
             </v-list>
 
-            <!-- <div
-                v-for="categorie in dish_categories"
-                :key="categorie.id"
-            >
-                <h3>{{ categorie.name }}</h3>
-                <p v-for="item in dishes" :key="item.name">{{ item.title.rendered }}</p>
-            </div> -->
         </v-container>
 
         <transition name="fade">
@@ -242,6 +236,7 @@
     flex-direction: column;
     padding: 1vw;
     width: auto;
+    z-index: 1;
 }
 
 .fade-enter-active {
