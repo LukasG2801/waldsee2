@@ -8,6 +8,7 @@
             fluid
             class="food-banner d-flex"
             fill-height
+            ref="banner_container"
         >
             <v-container class="d-flex flex-column">
                 <p class="food-banner-subtitle">Entdecken Sie unsere kulinarischen Köstlichkeiten</p>
@@ -16,6 +17,7 @@
 
         <v-container
             class="food-menu-container"
+            ref="food_menu_container"
         > 
             <p class="food-menu-title">Speisekarte</p>
 
@@ -35,14 +37,16 @@
                     v-for="dish in categorie.dishes"
                     :key="dish.id"
                     :v-show="itemInCategorie(categorie.id)"
+                    class="mb-5"
                 >
                     <v-list-item-content>
-                        <v-list-item-title v-text="dish.title.rendered"></v-list-item-title>
-                        <v-list-item-subtitle>{{ dish.acf.Beilagen }}</v-list-item-subtitle>
+                        <v-list-item-title v-text="dish.title.rendered" class="menu-dish-title"></v-list-item-title>
+                        <v-list-item-subtitle class="cursive">{{ dish.acf.Beilagen }}</v-list-item-subtitle>
                         <v-list-item-subtitle>{{ dish.acf.Preis }} €</v-list-item-subtitle>
                     </v-list-item-content>
 
                 </v-list-item>
+
             </v-list>
 
         </v-container>
@@ -53,14 +57,6 @@
                 v-scroll="onScrollSideMenu"
                 v-show="sideMenu.visible"
             >
-                <!-- <v-btn
-                    text 
-                    :href="item.id"
-                    v-for="item in dish_categories" 
-                    :key="item.id"
-                >
-                    # {{ item.name }}
-                </v-btn> -->
                 <v-list dense>
                     <v-subheader>Unsere Auswahl</v-subheader>
                     <v-list-item
@@ -78,6 +74,29 @@
                         </v-list-item-content>
                         
                     </v-list-item>
+                    <v-divider class="pb-5"/>
+                    
+                    <v-btn 
+                        fab
+                        dark
+                        x-small 
+                        class="mx-2" 
+                        elevation="5"
+                        color="secondary"
+                    >
+                        <v-icon small>mdi-share-variant</v-icon>
+                    </v-btn>
+                    
+                    <v-btn 
+                        fab
+                        dark
+                        x-small 
+                        class="mx-2" 
+                        elevation="5"
+                        color="secondary"
+                    >
+                        <v-icon small>mdi-printer</v-icon>
+                    </v-btn>
                 </v-list>
             </v-container>
         </transition>
@@ -181,7 +200,7 @@
 
                 }else if (top < 500){
                     this.sideMenu.visible = false
-                }            
+                }
             },
 
             itemInCategorie(categorie){
@@ -231,7 +250,7 @@
 .food-menu-sidemenu{
     position: fixed;
     top: 50vh;
-    left: 8vw;
+    left: 20vw;
     display: flex; 
     flex-direction: column;
     padding: 1vw;
@@ -256,5 +275,14 @@
 .menu-categorie-title {
     padding-bottom: 5vh;
     padding-top: 10vh;
+    text-decoration: underline;
+}
+
+.cursive{
+    font-style: italic;
+}
+
+.menu-dish-title{
+    color: #6e602f;
 }
 </style>
