@@ -4,5 +4,9 @@
     "LandingPage.food.title": "Unsere Spezialitäten",
     "LandingPage.food.subtitle1": "Neben regionalen Spezialitäten stehen auch saisonale Gerichte auf unserer ständig aktualisierten Karte.",
     "LandingPage.food.subtitle2": "Auf jeden Fall werden Sie in unserer umfangreichen Speisekarte das finden, wonach Gaumen und Seele verlangen.",
-    "LandingPage.food.button.menu": "Zur Speisekarte"
+    "LandingPage.food.button.menu": "Zur Speisekarte",
+    "Food.Menu.Title": "Speisekarte",
+    "language.german": "Deutsch",
+    "language.english": "Englisch",
+    "language.french": "Französisch"
 }

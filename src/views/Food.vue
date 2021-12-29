@@ -2,7 +2,6 @@
     <v-container 
         fluid
         class="ma-0 pa-0"
-        style="position:relative;"
     >
         <v-container
             fluid
@@ -14,42 +13,8 @@
                 <p class="food-banner-subtitle">Entdecken Sie unsere kulinarischen Köstlichkeiten</p>
             </v-container>
         </v-container>
-
-        <v-container
-            class="food-menu-container"
-            ref="food_menu_container"
-        > 
-            <p class="food-menu-title">Speisekarte</p>
-
-            <v-list
-                v-for="categorie in dish_categories"
-                :key="categorie.id"
-                :ref="categorie.id"
-                :id="categorie.id"
-            >
-                <v-toolbar-title
-                    class="menu-categorie-title"
-                >
-                    {{ categorie.name }}
-                </v-toolbar-title>
-                
-                <v-list-item
-                    v-for="dish in categorie.dishes"
-                    :key="dish.id"
-                    :v-show="itemInCategorie(categorie.id)"
-                    class="mb-5"
-                >
-                    <v-list-item-content>
-                        <v-list-item-title v-text="dish.title.rendered" class="menu-dish-title"></v-list-item-title>
-                        <v-list-item-subtitle class="cursive">{{ dish.acf.Beilagen }}</v-list-item-subtitle>
-                        <v-list-item-subtitle>{{ dish.acf.Preis }} €</v-list-item-subtitle>
-                    </v-list-item-content>
-
-                </v-list-item>
-
-            </v-list>
-
-        </v-container>
+<!-- 
+        <v-container class="food-main-container">
 
         <transition name="fade">
             <v-container 
@@ -100,6 +65,94 @@
                 </v-list>
             </v-container>
         </transition>
+
+        <v-container
+            class="food-menu-container"
+            ref="food_menu_container"
+        > 
+            <p class="food-menu-title">Speisekarte</p>
+
+            <v-list
+                v-for="categorie in dish_categories"
+                :key="categorie.id"
+                :ref="categorie.id"
+                :id="categorie.id"
+            >
+                <v-toolbar-title
+                    class="menu-categorie-title"
+                >
+                    {{ categorie.name }}
+                </v-toolbar-title>
+                
+                <v-list-item
+                    v-for="dish in categorie.dishes"
+                    :key="dish.id"
+                    :v-show="itemInCategorie(categorie.id)"
+                    class="mb-5"
+                >
+                    <v-list-item-content>
+                        <v-list-item-title v-text="dish.title.rendered" class="menu-dish-title"></v-list-item-title>
+                        <v-list-item-subtitle class="cursive">{{ dish.acf.Beilagen }}</v-list-item-subtitle>
+                        <v-list-item-subtitle>{{ dish.acf.Preis }} €</v-list-item-subtitle>
+                    </v-list-item-content>
+
+                </v-list-item>
+
+            </v-list>
+
+        </v-container>
+
+        </v-container> -->
+
+        <v-container
+            class="food-menu-container"
+        >
+            <p class="food-menu-title">{{ $t('Food.Menu.Title')}}</p>
+            <v-toolbar
+                flat
+                light
+            >
+            </v-toolbar>
+            <v-tabs vertical>
+                <v-tab
+                    v-for="categorie in dish_categories"
+                    :key="categorie.id"
+                    :ref="categorie.id"
+                    :id="categorie.id"
+                >
+                    {{ categorie.name }}
+                </v-tab>
+
+                <v-tab-item
+                    v-for="categorie in dish_categories"
+                    :key="categorie.id"
+                    
+                >
+                    <v-list class="food-menu-list">
+                        <!-- <v-toolbar-title>{{ categorie.name }}</v-toolbar-title> -->
+
+                        <v-list-item
+                            v-for="dish in categorie.dishes"
+                            :key="dish.id"
+                            :v-show="itemInCategorie(categorie.id)"
+                            class="mb-5"
+                        >
+                            <v-list-item-content>
+                                
+                                <v-list-item-title
+                                    v-text="dish.title.rendered"
+                                    class="menu-dish-title"
+                                ></v-list-item-title>
+                                
+                                <v-list-item-subtitle class="cursive" style="margin-top: 5px">{{ dish.acf.Beilagen }}</v-list-item-subtitle>
+                                <v-list-item-subtitle style="margin-top: 5px">{{ dish.acf.Preis }} €</v-list-item-subtitle>
+                           
+                            </v-list-item-content>
+                        </v-list-item>
+                    </v-list>
+                </v-tab-item>
+            </v-tabs>
+        </v-container>
     </v-container>
 </template>
 <script>
@@ -110,7 +163,7 @@
             dish_categories: [],
             extracted_dish_categories: [],
             sideMenu: {
-                visible: false,
+                visible: true,
             },
             false: false
         }),
@@ -127,7 +180,7 @@
              * Fetching dishes from wordpress
              */
             async fetchDishes(){
-                let response = await this.$http.get('/wp-json/wp/v2/gerichte')
+                let response = await this.$http.get('/wp-json/wp/v2/gerichte?per_page=100')
                 this.$store.commit('dishes/set_dishes', response.data)
                 this.fetchDishCategories()
             },
@@ -191,16 +244,16 @@
                 }
             },
 
-            onScrollSideMenu(e) {
-                if (typeof window === 'undefined') return
-                const top = window.pageYOffset || e.target.scrollTop || 0
+            onScrollSideMenu() {
+                // if (typeof window === 'undefined') return
+                // const top = window.pageYOffset || e.target.scrollTop || 0
 
-                if(top > 350) {
-                    this.sideMenu.visible = true
+                // if(top > 350) {
+                //     this.sideMenu.visible = true
 
-                }else if (top < 500){
-                    this.sideMenu.visible = false
-                }
+                // }else if (top < 500){
+                //     this.sideMenu.visible = false
+                // }
             },
 
             itemInCategorie(categorie){
@@ -217,6 +270,17 @@
 </script>
 
 <style scoped>
+
+.food-main-container{
+    margin: 30;
+    display: grid; 
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.food-menu-list{
+    padding-left: 12vw;
+}
+
 .food-banner {
     height: 70vh;
     width: 100%;
@@ -234,10 +298,7 @@
 
 .food-menu-container{
     background: white;
-    width: 50vw;
-    left: 25vw;
     margin-top: 5vh;
-    text-align: center;
 }
 
 .food-menu-title{
@@ -248,14 +309,16 @@
 }
 
 .food-menu-sidemenu{
-    position: fixed;
+    /* position: fixed;
     top: 50vh;
     left: 20vw;
     display: flex; 
     flex-direction: column;
     padding: 1vw;
     width: auto;
-    z-index: 1;
+    z-index: 1; */
+    position: sticky;
+    top: 0px;
 }
 
 .fade-enter-active {

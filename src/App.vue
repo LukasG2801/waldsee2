@@ -252,11 +252,11 @@
             <v-list-item
               v-for="(lang, i) in languages"
               :key="`Lang${i}`"
-              :value="lang"
+              :value="lang.code"
               link
             >
               <v-list-item-title>
-                {{ lang }}
+                {{ lang.description }}
               </v-list-item-title>
             </v-list-item>
             </v-list-item-group>
@@ -304,6 +304,7 @@
 
 <script>
 import Footer from './components/Footer.vue'
+import i18n from './i18n.js'
 
 export default {
   name: 'App',
@@ -322,9 +323,9 @@ export default {
       { text: 'IMPRESSUM', path: '/food' },
     ],
     languages: [
-      'de',
-      'en',
-      'fr'
+      { code: 'de', description: i18n.t('language.german'), icon: ''},
+      { code: 'en', description: i18n.t('language.english'), icon: ''},
+      { code: 'fr', description: i18n.t('language.french'), icon: ''},
     ],
     selectedLang: '',
     fab: false, 
