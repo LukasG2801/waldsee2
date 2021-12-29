@@ -1,13 +1,21 @@
 <template>
-    <v-container 
-        class="d-flex justify-center align-center flex-column footer"
+    <v-container
         fluid
+        class="ma-0 pa-0" 
     >
+        <v-parallax 
+            src="../assets/footer_background.jpg"
+            height="400"
+        >
+        
+        <v-container
+            class="footer d-flex flex-column justify-center align-center"
+        >
         <v-img
           class="mx-2 ml-10"
           src="../assets/logo_white.png"
-          max-height="100"
-          max-width="100"
+          max-height="150"
+          max-width="150"
           contain
         />
 
@@ -16,10 +24,16 @@
             <div class="footer-left">
                 <p>Restaurant Waldsee-Terrasse</p>
                 <p>Familie Rainer Müller</p>
+
+                <div class="">
+                    
+                </div>
             </div>
             
             <div><h1>2</h1></div>
         </div>
+        </v-container>
+        </v-parallax>
     </v-container>
 </template>
 
@@ -28,7 +42,6 @@
 
 <style scoped>
 .footer {
-    background-color: #878787;
     min-height: 30vh;
     padding-top: 5vh;
 }

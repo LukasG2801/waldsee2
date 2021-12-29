@@ -99,12 +99,14 @@
         ref="app_bar"
         v-scroll="onScrollAppBar"
         :color="appbar.color"
-        style="z-index: 99;"
+        elevate-on-scroll
+        elevation="5"
       >
         
         <v-app-bar-nav-icon
           @click="drawer = !drawer"
           x-large
+          :color="appbar.navicon_color"
         ></v-app-bar-nav-icon>
 
         <router-link
@@ -314,7 +316,8 @@ export default {
       color: 'rgba(222,222,222,0.4) !important;',
       dark: true,
       logo: false,
-      chip_phone_textcolor: 'white'
+      chip_phone_textcolor: 'white',
+      navicon_color: 'white'
     },
     items: [
       { text: 'ESSEN', path: '/food' },
@@ -379,14 +382,16 @@ export default {
         this.appbar.color = "white"
         this.appbar.dark = false
         this.appbar.logo = true
-        this.appbar.chip_phone_textcolor = 'black'
+        this.appbar.chip_phone_textcolor = 'secondary'
         this.sideMenu = true
+        this.appbar.navicon_color = 'secondary'
       }else if (top === 0){
         this.appbar.color="rgba(222,222,222,0.4) !important;"
         this.appbar.dark = true
         this.appbar.logo = false
         this.appbar.chip_phone_textcolor = 'white'
         this.sideMenu = false
+        this.appbar.navicon_color = 'white'
       }
     },
 

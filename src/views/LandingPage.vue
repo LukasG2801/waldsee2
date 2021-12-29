@@ -10,18 +10,11 @@
             onscroll="onScrollMainContainer"
         >
             <div class="d-flex justify-center align-center flex-column">
-                <v-img src="../assets/logo_white.png" max-width="400px"></v-img>
+                <v-img src="../assets/logo_white.png" max-width="400px" elevation="5"></v-img>
                 <p class="slogan-subtitle">"{{ $t('LandingPage.slogan') }}"</p>
             </div>
         </v-container>
 
-        <v-lazy
-            v-model="foodPartActive"
-            :options="{
-                threshold: .5
-            }"
-            transition="fade-transition"
-        >
         <v-container
             fluid
             class="food-intro d-flex justify-center align-center flex-row"
@@ -49,7 +42,6 @@
                 </v-btn>
             </div>
         </v-container>
-        </v-lazy>
         
         <v-container 
             fluid
@@ -58,6 +50,8 @@
         >
             <div class="location-intro-text">
                 <p class="location-intro-text-title">Was zeichnet uns eigentlich aus ?</p>
+                <p class="location-intro-text-subtitle">Ebenso wie unser Essen besticht auch unser einmaliges Ambiente.</p>
+                <p class="location-intro-text-subtitle">Ein moderner und offener Innenraum gepaart mit einem großen Außenbereich direkt am Haslach Waldsee gelegen mit Spielplatz und mit eigener Minigolf-Bahn, lassen ihren Besuch zu einem besonderen Erlebnis werden</p>
             </div>
         </v-container>
         
@@ -178,7 +172,7 @@
 .welcome-screen {
     height: 100vh;
     width: 100%;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1) ), url('../assets/banner2.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1) ), url('../assets/banner3.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -199,19 +193,25 @@
 .location-intro{
     height: 100vh; 
     width: 100%;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/location1.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) ), url('../assets/location1.jpg');
     /* background: url('../assets/location1.jpg'); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding-top: 40vh;
+    padding-top: 70vh;
     padding-left: 2vw;
 }
 
 .location-intro-text-title{
     color: white;
     font-family: 'Satisfy', cursive;
-    font-size: 2.5rem
+    font-size: 2.5rem;
+    width: 20vw;
+}
+
+.location-intro-text-subtitle {
+    color: white; 
+    width: 40vw;
 }
 
 .food-intro{

@@ -10,99 +10,9 @@
             ref="banner_container"
         >
             <v-container class="d-flex flex-column">
-                <p class="food-banner-subtitle">Entdecken Sie unsere kulinarischen Köstlichkeiten</p>
+                <p class="food-banner-subtitle"></p>
             </v-container>
         </v-container>
-<!-- 
-        <v-container class="food-main-container">
-
-        <transition name="fade">
-            <v-container 
-                class="food-menu-sidemenu"
-                v-scroll="onScrollSideMenu"
-                v-show="sideMenu.visible"
-            >
-                <v-list dense>
-                    <v-subheader>Unsere Auswahl</v-subheader>
-                    <v-list-item
-                        v-for="item in dish_categories"
-                        :key="item.id"
-                        link
-                        @click="goto(item.id)"
-                    >
-                        <v-list-item-icon>
-                            <v-icon small>mdi-pound</v-icon>
-                        </v-list-item-icon>
-                        
-                        <v-list-item-content>
-                            <v-list-item-title v-text="item.name"></v-list-item-title>
-                        </v-list-item-content>
-                        
-                    </v-list-item>
-                    <v-divider class="pb-5"/>
-                    
-                    <v-btn 
-                        fab
-                        dark
-                        x-small 
-                        class="mx-2" 
-                        elevation="5"
-                        color="secondary"
-                    >
-                        <v-icon small>mdi-share-variant</v-icon>
-                    </v-btn>
-                    
-                    <v-btn 
-                        fab
-                        dark
-                        x-small 
-                        class="mx-2" 
-                        elevation="5"
-                        color="secondary"
-                    >
-                        <v-icon small>mdi-printer</v-icon>
-                    </v-btn>
-                </v-list>
-            </v-container>
-        </transition>
-
-        <v-container
-            class="food-menu-container"
-            ref="food_menu_container"
-        > 
-            <p class="food-menu-title">Speisekarte</p>
-
-            <v-list
-                v-for="categorie in dish_categories"
-                :key="categorie.id"
-                :ref="categorie.id"
-                :id="categorie.id"
-            >
-                <v-toolbar-title
-                    class="menu-categorie-title"
-                >
-                    {{ categorie.name }}
-                </v-toolbar-title>
-                
-                <v-list-item
-                    v-for="dish in categorie.dishes"
-                    :key="dish.id"
-                    :v-show="itemInCategorie(categorie.id)"
-                    class="mb-5"
-                >
-                    <v-list-item-content>
-                        <v-list-item-title v-text="dish.title.rendered" class="menu-dish-title"></v-list-item-title>
-                        <v-list-item-subtitle class="cursive">{{ dish.acf.Beilagen }}</v-list-item-subtitle>
-                        <v-list-item-subtitle>{{ dish.acf.Preis }} €</v-list-item-subtitle>
-                    </v-list-item-content>
-
-                </v-list-item>
-
-            </v-list>
-
-        </v-container>
-
-        </v-container> -->
 
         <v-container
             class="food-menu-container"
@@ -112,6 +22,27 @@
                 flat
                 light
             >
+                <v-spacer/>
+                <v-btn
+                    icon
+                    small
+                    rounded
+                    elevation="5"
+                    class="mx-2"
+                    color="secondary"
+                >
+                    <v-icon small>mdi-printer</v-icon>
+                </v-btn>
+                <v-btn
+                    icon
+                    small
+                    rounded
+                    elevation="5"
+                    class="mx-2"
+                    color="secondary"
+                >
+                    <v-icon small>mdi-share-variant</v-icon>
+                </v-btn>
             </v-toolbar>
             <v-tabs vertical>
                 <v-tab
@@ -129,8 +60,6 @@
                     
                 >
                     <v-list class="food-menu-list">
-                        <!-- <v-toolbar-title>{{ categorie.name }}</v-toolbar-title> -->
-
                         <v-list-item
                             v-for="dish in categorie.dishes"
                             :key="dish.id"
