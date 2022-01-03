@@ -99,12 +99,14 @@
         ref="app_bar"
         v-scroll="onScrollAppBar"
         :color="appbar.color"
-        style="z-index: 99;"
+        elevate-on-scroll
+        elevation="5"
       >
         
         <v-app-bar-nav-icon
           @click="drawer = !drawer"
           x-large
+          :color="appbar.navicon_color"
         ></v-app-bar-nav-icon>
 
         <router-link
@@ -252,11 +254,11 @@
             <v-list-item
               v-for="(lang, i) in languages"
               :key="`Lang${i}`"
-              :value="lang"
+              :value="lang.code"
               link
             >
               <v-list-item-title>
-                {{ lang }}
+                {{ lang.description }}
               </v-list-item-title>
             </v-list-item>
             </v-list-item-group>
@@ -304,6 +306,7 @@
 
 <script>
 import Footer from './components/Footer.vue'
+import i18n from './i18n.js'
 
 export default {
   name: 'App',
@@ -313,7 +316,8 @@ export default {
       color: 'rgba(222,222,222,0.4) !important;',
       dark: true,
       logo: false,
-      chip_phone_textcolor: 'white'
+      chip_phone_textcolor: 'white',
+      navicon_color: 'white'
     },
     items: [
       { text: 'ESSEN', path: '/food' },
@@ -322,9 +326,9 @@ export default {
       { text: 'IMPRESSUM', path: '/food' },
     ],
     languages: [
-      'de',
-      'en',
-      'fr'
+      { code: 'de', description: i18n.t('language.german'), icon: ''},
+      { code: 'en', description: i18n.t('language.english'), icon: ''},
+      { code: 'fr', description: i18n.t('language.french'), icon: ''},
     ],
     selectedLang: '',
     fab: false, 
@@ -378,14 +382,16 @@ export default {
         this.appbar.color = "white"
         this.appbar.dark = false
         this.appbar.logo = true
-        this.appbar.chip_phone_textcolor = 'black'
+        this.appbar.chip_phone_textcolor = 'secondary'
         this.sideMenu = true
+        this.appbar.navicon_color = 'secondary'
       }else if (top === 0){
         this.appbar.color="rgba(222,222,222,0.4) !important;"
         this.appbar.dark = true
         this.appbar.logo = false
         this.appbar.chip_phone_textcolor = 'white'
         this.sideMenu = false
+        this.appbar.navicon_color = 'white'
       }
     },
 
@@ -414,6 +420,7 @@ export default {
   },
 
   created() {
+
   },
 
   mounted() {

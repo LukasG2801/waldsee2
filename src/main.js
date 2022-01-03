@@ -6,6 +6,7 @@ import CountryFlag from 'vue-country-flag'
 import axios from 'axios'
 import { store } from './store/index'
 import i18n from './i18n'
+import * as VueAos from 'vue-aos'
 
 Vue.config.productionTip = false
 
@@ -17,6 +18,8 @@ const base = axios.create({
 })
 
 Vue.prototype.$http = base
+
+Vue.use(VueAos)
 
 new Vue({
     vuetify,

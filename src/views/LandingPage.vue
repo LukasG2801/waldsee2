@@ -10,18 +10,11 @@
             onscroll="onScrollMainContainer"
         >
             <div class="d-flex justify-center align-center flex-column">
-                <v-img src="../assets/logo_white.png" max-width="400px"></v-img>
+                <v-img src="../assets/logo_white.png" max-width="400px" elevation="5"></v-img>
                 <p class="slogan-subtitle">"{{ $t('LandingPage.slogan') }}"</p>
             </div>
         </v-container>
 
-        <v-lazy
-            v-model="foodPartActive"
-            :options="{
-                threshold: .5
-            }"
-            transition="fade-transition"
-        >
         <v-container
             fluid
             class="food-intro d-flex justify-center align-center flex-row"
@@ -49,7 +42,6 @@
                 </v-btn>
             </div>
         </v-container>
-        </v-lazy>
         
         <v-container 
             fluid
@@ -58,6 +50,8 @@
         >
             <div class="location-intro-text">
                 <p class="location-intro-text-title">Was zeichnet uns eigentlich aus ?</p>
+                <p class="location-intro-text-subtitle">Ebenso wie unser Essen besticht auch unser einmaliges Ambiente.</p>
+                <p class="location-intro-text-subtitle">Ein moderner und offener Innenraum gepaart mit einem großen Außenbereich direkt am Haslach Waldsee gelegen mit Spielplatz und mit eigener Minigolf-Bahn, lassen ihren Besuch zu einem besonderen Erlebnis werden</p>
             </div>
         </v-container>
         
@@ -67,42 +61,48 @@
             class="ratings-container"
         >
             <p class="ratings-title mt-8" color="seccondary" style="text-align: center;">... Und was denken unsere Gäste von uns ?</p>
-            <v-container
-                class="d-flex flex-row" 
-            >
-                <v-card 
-                    width="10vw"
-                    class="ma-2"
-                    v-for="rating in ratings"
-                    :key="rating.id"
+            <Ratings/>
+            
+            <v-container class="d-flex justify-center">
+                <v-btn 
+                    outlined
+                    class="pa-2 ma-2"
+                    color="secondary"
+                    dark
+                    fab
+                    elevation="5"
                 >
-                    <v-card-title><v-icon large>{{ rating.acf.quelle | getSourceIcon }}</v-icon></v-card-title>
-                    <!-- <v-card-title><i class="fa fa-tripadvisor" aria-hidden="true"></i></v-card-title> -->
-                    <v-divider></v-divider>
-                    <v-rating
-                        :value="rating.acf.bewertung | stringToNumber"
-                        color="yellow darken-3"
-                        readonly
-                    >
-                    </v-rating>
-                    <v-card-subtitle>{{ rating.title.rendered }}</v-card-subtitle>
-                    <v-card-actions>
-                        <v-btn
-                            text
-                            @click="openRating(rating.acf.rezension_link)"
-                        >
-                            Mehr
-                        </v-btn>
-                    </v-card-actions>
-                </v-card>
+                    <v-icon>mdi-google</v-icon>
+                </v-btn>
+                <v-btn 
+                    outlined
+                    class="pa-2 ma-2"
+                    color="secondary"
+                    fab
+                    elevation="5"
+                >
+                    <v-icon>fa-tripadvisor</v-icon>
+                </v-btn>
+                <v-btn 
+                    outlined
+                    class="pa-2 ma-2"
+                    color="secondary"
+                    fab
+                    elevation="5"
+                >
+                    <v-icon>fa-yelp</v-icon>
+                </v-btn>
             </v-container>
         </v-container>
 
+        <Minigolf/>
     </v-container>
 </template>
 
 <script>
     import { mapGetters } from 'vuex'
+    import Ratings from '../components/Ratings'
+    import Minigolf from '../components/Minigolf'
 
     export default {
         data: () => ({
@@ -114,6 +114,11 @@
             ...mapGetters({
                 ratings: 'ratings/get_ratings'
             })
+        },
+
+        components: {
+            'Ratings': Ratings,
+            'Minigolf': Minigolf
         },
 
         methods:{
@@ -157,6 +162,7 @@
 </script>
 
 <style scoped>
+@import url('../styles/style.css');
 
 .content-container {
     padding: 0;
@@ -166,7 +172,7 @@
 .welcome-screen {
     height: 100vh;
     width: 100%;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1) ), url('../assets/banner2.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1) ), url('../assets/banner3.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -187,19 +193,25 @@
 .location-intro{
     height: 100vh; 
     width: 100%;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/location1.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) ), url('../assets/location1.jpg');
     /* background: url('../assets/location1.jpg'); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding-top: 40vh;
+    padding-top: 70vh;
     padding-left: 2vw;
 }
 
 .location-intro-text-title{
     color: white;
     font-family: 'Satisfy', cursive;
-    font-size: 2.5rem
+    font-size: 2.5rem;
+    width: 20vw;
+}
+
+.location-intro-text-subtitle {
+    color: white; 
+    width: 40vw;
 }
 
 .food-intro{

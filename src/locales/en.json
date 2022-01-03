@@ -4,5 +4,9 @@
     "LandingPage.food.title": "Our specialities",
     "LandingPage.food.subtitle1": "In addition to regional specialties, there are also seasonal dishes on our constantly updated menu",
     "LandingPage.food.subtitle2": "In any case, you will find what your palate and soul long for in our extensive menu.",
-    "LandingPage.food.button.menu": "To the menu"
+    "LandingPage.food.button.menu": "To the menu",
+    "Food.Menu.Title": "Menu",
+    "language.german": "German",
+    "language.english": "English",
+    "language.french": "French"
 }
