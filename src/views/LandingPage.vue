@@ -51,7 +51,7 @@
             <div class="location-intro-text">
                 <p class="location-intro-text-title">Was zeichnet uns eigentlich aus ?</p>
                 <p class="location-intro-text-subtitle">Ebenso wie unser Essen besticht auch unser einmaliges Ambiente.</p>
-                <p class="location-intro-text-subtitle">Ein moderner und offener Innenraum gepaart mit einem großen Außenbereich direkt am Haslach Waldsee gelegen mit Spielplatz und mit eigener Minigolf-Bahn, lassen ihren Besuch zu einem besonderen Erlebnis werden</p>
+                <p class="location-intro-text-subtitle">Ein moderner und offener Innenraum gepaart mit einem großen Außenbereich direkt am Haslach Waldsee, mit Spielplatz und eigener Minigolf-Bahn, lassen ihren Besuch zu einem besonderen Erlebnis werden</p>
             </div>
         </v-container>
         
@@ -193,7 +193,7 @@
 .location-intro{
     height: 100vh; 
     width: 100%;
-    background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) ), url('../assets/location1.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8) ), url('../assets/location1.jpg');
     /* background: url('../assets/location1.jpg'); */
     background-repeat: no-repeat;
     background-position: center;

@@ -44,6 +44,7 @@
                     <v-icon small>mdi-share-variant</v-icon>
                 </v-btn>
             </v-toolbar>
+
             <v-tabs vertical>
                 <v-tab
                     v-for="categorie in dish_categories"
@@ -141,14 +142,10 @@
                         }
                     })
                 }
+
+                aItems.sort(function(a, b){ return a - b })
                 categorie.dishes = aItems
                 return categorie
-            },
-
-            goto(id) {
-                document.getElementById(id).scrollIntoView({
-                    behavior: 'smooth'
-                })
             },
 
             /**
@@ -213,7 +210,8 @@
 .food-banner {
     height: 70vh;
     width: 100%;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/food_welcome.jpg');
+    /* background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/food_welcome.jpg'); */
+    background: url('../assets/food_welcome.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
