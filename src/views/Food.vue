@@ -14,6 +14,11 @@
             </v-container>
         </v-container>
 
+        <v-container class="d-flex justify-center pt-10">
+            <v-breadcrumbs
+                :items="aBreadcrumbs"
+            ></v-breadcrumbs>
+        </v-container>
         <v-container
             class="food-menu-container"
         >
@@ -30,6 +35,7 @@
                     elevation="5"
                     class="mx-2"
                     color="secondary"
+                    @click="onPrint"
                 >
                     <v-icon small>mdi-printer</v-icon>
                 </v-btn>
@@ -40,6 +46,7 @@
                     elevation="5"
                     class="mx-2"
                     color="secondary"
+                    @click="onShare"
                 >
                     <v-icon small>mdi-share-variant</v-icon>
                 </v-btn>
@@ -95,7 +102,11 @@
             sideMenu: {
                 visible: true,
             },
-            false: false
+            false: false,
+            aBreadcrumbs: [
+                {text: 'Startseite', disabled: false, href:"/"},
+                {text: 'Speisekarte', disabled: true, href:"/food"}
+            ]
         }),
         
         computed: {
@@ -184,6 +195,14 @@
 
             itemInCategorie(categorie){
                 return categorie
+            },
+
+            onShare() {
+                navigator.share()
+            },
+
+            onPrint() {
+                window.print()
             }
          },
 

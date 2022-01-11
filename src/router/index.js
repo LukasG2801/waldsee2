@@ -4,17 +4,17 @@ import VueRouter from 'vue-router'
 import LandingPage from '../views/LandingPage.vue'
 import Reservation from '../views/Reservation.vue'
 import Food from '../views/Food.vue'
+import Drinks from '../views/Drinks.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
-    {
+const routes = [{
         path: '/',
         name: 'LandingPage',
         component: LandingPage
     },
     {
-        path: '/reservation', 
+        path: '/reservation',
         name: 'Reservation',
         component: Reservation
     },
@@ -22,6 +22,11 @@ const routes = [
         path: '/food',
         name: 'Food',
         component: Food
+    },
+    {
+        path: '/drinks',
+        name: 'Drinks',
+        component: Drinks
     }
 ]
 

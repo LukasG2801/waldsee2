@@ -228,6 +228,23 @@
             <span>Speisekarte</span>
           </v-tooltip>
 
+          <v-tooltip left>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn 
+                dark 
+                color="secondary" 
+                height="50px" 
+                tile
+                v-bind="attrs"
+                v-on="on"
+                to="/drinks"
+              >
+                <v-icon>mdi-glass-wine</v-icon>
+              </v-btn>
+            </template>
+            <span>Getränkekarte</span>
+          </v-tooltip>
+
           <v-menu
             rounded="false"
             offset-x
