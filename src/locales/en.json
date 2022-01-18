@@ -8,5 +8,8 @@
     "Food.Menu.Title": "Menu",
     "language.german": "German",
     "language.english": "English",
-    "language.french": "French"
+    "language.french": "French",
+    "Food.Intro.Image.fresh": "Fresh",
+    "Food.Intro.Image.regional": "Regional",
+    "Food.Intro.Image.seasonal": "Seasonal"
 }

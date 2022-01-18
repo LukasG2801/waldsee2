@@ -6,9 +6,13 @@
     >
         
         <v-container
-            class="d-flex justify-start"
+            class="d-flex justify-start minigolf-intro"
         >
-            <h1 data-aos="fade-up">Minigolf</h1>
+            <div class="location-intro-text">
+                <p class="location-intro-text-title">Minigolf</p>
+                <p class="location-intro-text-subtitle">Nach oder vor dem Essen noch eine Runde Minigolf ?</p>
+                <p class="location-intro-text-subtitle">Direkt neben unserem Restaurant bieten wir in unserem Außenbereich eine Minigolf-Bahn an</p>
+            </div>
         </v-container>
         
     </v-parallax>
@@ -32,15 +36,8 @@ export default {
 
 </script>
 <style scoped>
-.slide-fade-enter-active {
-  transition: all 2s ease;
-}
-.slide-fade-leave-active {
-  transition: all 4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateY(30px);
-  opacity: 0;
+.minigolf-intro{
+    padding-left: 2vw;
+    margin: 0;
 }
 </style>

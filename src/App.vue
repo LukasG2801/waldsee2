@@ -300,7 +300,7 @@
       <v-main id="main">
         <v-container 
           fluid
-          class="ma-0 pa-0"
+          class="ma-0 pa-0 background"
         >
           <transition name="fade" mode="out-in">
           <router-view
@@ -360,7 +360,7 @@ export default {
       'logo_black.png',
       'welcome.jpg'
     ],
-    isLoading: true,
+    isLoading: false,
     sideMenu: false
   }),
 
@@ -417,21 +417,21 @@ export default {
     },
 
     loadImage() {
-      let iImagesLoaded = 0
+      // let iImagesLoaded = 0
 
-      this.imagesToPreload.forEach(imageurl => {
-        let oImage = new Image()
-        oImage.src = require("./assets/" + imageurl)
+      // this.imagesToPreload.forEach(imageurl => {
+      //   let oImage = new Image()
+      //   oImage.src = require("./assets/" + imageurl)
         
-        oImage.onload = () => {
-          iImagesLoaded++;
+      //   oImage.onload = () => {
+      //     iImagesLoaded++;
 
-          if(iImagesLoaded === this.imagesToPreload.length) {
-            console.log("loaded")
-            this.isLoading = false
-          }
-        }
-      })
+      //     if(iImagesLoaded === this.imagesToPreload.length) {
+      //       console.log("loaded")
+      //       this.isLoading = false
+      //     }
+      //   }
+      // })
     }
 
   },
@@ -454,6 +454,7 @@ export default {
   font-family: "Bergell";
   src: url('./fonts/Bergell Std Regular.otf') format('truetype');
 }
+
 li {
   list-style: none;
 }

@@ -8,5 +8,8 @@
     "Food.Menu.Title": "Speisekarte",
     "language.german": "Deutsch",
     "language.english": "Englisch",
-    "language.french": "Französisch"
+    "language.french": "Französisch",
+    "Food.Intro.Image.fresh": "Frisch",
+    "Food.Intro.Image.regional": "Regional",
+    "Food.Intro.Image.seasonal": "Saisonal"
 }

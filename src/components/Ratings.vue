@@ -1,8 +1,10 @@
 <template>
+    <v-container>
     <v-slide-group
         v-model="rating_carousel"
         class="pa-4"
         show-arrows
+        v-show="!loading"
     >
         <v-slide-item
             v-for="rating in ratings"
@@ -34,6 +36,19 @@
             </v-card>
         </v-slide-item>
     </v-slide-group>
+    <v-container
+        class="d-flex"
+    >
+        <v-skeleton-loader
+            v-for="i in 5"
+            :key="i"
+            type="card"
+            width="18%"
+            class="mx-auto"
+            v-show="loading"
+        />
+    </v-container>
+    </v-container>
 </template>
 
 <script>
@@ -41,7 +56,9 @@ import { mapGetters } from 'vuex'
 
 export default {
     data: () => ({
-        rating_carousel: 0
+        rating_carousel: 0,
+        loading: true,
+        flag_no_data_fetched: false,
     }),
     
     computed: {
@@ -54,6 +71,7 @@ export default {
         async fetchRatings() {
             let response = await this.$http.get('/wp-json/wp/v2/reviews')
             this.$store.commit('ratings/set_ratings', response.data)
+            this.loading = false
         }
     },
 
