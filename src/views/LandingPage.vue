@@ -9,10 +9,10 @@
             fill-height
             onscroll="onScrollMainContainer"
         >
-            <div class="d-flex justify-center align-center flex-column">
+            <!-- <div class="d-flex justify-center align-center flex-column">
                 <v-img src="../assets/logo_white.png" max-width="400px" elevation="5"></v-img>
                 <p class="slogan-subtitle">"{{ $t('LandingPage.slogan') }}"</p>
-            </div>
+            </div> -->
         </v-container>
 
         <FoodIntro/>
@@ -138,9 +138,10 @@
 }
 
 .welcome-screen {
-    height: 100vh;
+    height: 80vh;
     width: 100%;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1) ), url('../assets/banner3.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1) ), url('../assets/food_landing_banner.jpg');
+    /* background: url('../assets/food_landing_banner.jpg'); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -154,7 +155,8 @@
 }
 
 .ratings-title{
-    font-family: 'Satisfy', cursive;
+    /* font-family: 'Satisfy', cursive; */
+    font-family: "Bergell";
     font-size: 2.5rem;
     color: #6e602f;
 }

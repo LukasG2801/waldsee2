@@ -80,9 +80,9 @@ export default {
     data: () => ({
         loading: true,
         intro_images: [
-            { path: require('../assets/food_intro1.jpg'), text: 'Food.Intro.Image.fresh'},
-            { path: require('../assets/food_intro2.jpg'), text: 'Food.Intro.Image.regional'},
-            { path: require('../assets/food_intro3.jpg'), text: 'Food.Intro.Image.seasonal'}
+            { path: require('../assets/food_intro1.jpg'), text: 'Food.Intro.Image.regional'},
+            { path: require('../assets/food_intro2.jpg'), text: 'Food.Intro.Image.seasonal'},
+            { path: require('../assets/food_intro3.jpg'), text: 'Food.Intro.Image.fresh'}
         ],
         imagesToPreload: [
             'food_intro1.jpg',

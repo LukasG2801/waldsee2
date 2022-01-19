@@ -121,7 +121,7 @@
              * Fetching dishes from wordpress
              */
             async fetchDishes(){
-                let response = await this.$http.get('/wp-json/wp/v2/gerichte?per_page=100')
+                let response = await this.$http.get('/wp-json/wp/v2/dishes?per_page=100')
                 this.$store.commit('dishes/set_dishes', response.data)
                 this.fetchDishCategories()
             },

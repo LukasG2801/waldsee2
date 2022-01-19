@@ -1,3 +1,22 @@
+@font-face {
+    font-family: "Bergell";
+    src: url('../fonts/Bergell Std Regular.otf') format('truetype');
+}
+
+.app-bar-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: x-large;
+    color: white;
+}
+
+.app-bar-link {
+    font-family: "Bergell";
+    font-size: 1.3rem;
+    padding-right: 1.3vw;
+    font-weight: bold;
+    color: #6e602f !important;
+}
+
 .content {
     margin: 0;
     padding: 0;
@@ -92,7 +111,8 @@
 
 .location-intro-text-title {
     color: white;
-    font-family: 'Satisfy', cursive;
+    /* font-family: 'Satisfy', cursive; */
+    font-family: "Bergell";
     font-size: 2.5rem;
     width: auto;
 }
@@ -115,7 +135,8 @@
 }
 
 .food-intro-text-title {
-    font-family: 'Satisfy', cursive;
+    /* font-family: 'Satisfy', cursive; */
+    font-family: "Bergell";
     font-size: 2.5rem;
     color: #6e602f;
 }

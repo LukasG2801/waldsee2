@@ -93,22 +93,19 @@
       </v-navigation-drawer>
 
       <v-app-bar
-        :dark="appbar.dark"
         fixed
-        class="landing-app-bar"
         ref="app_bar"
-        v-scroll="onScrollAppBar"
-        :color="appbar.color"
         elevate-on-scroll
         elevation="5"
+        height="100px"
+        class="pl-8 pr-8"
+        v-scroll="onScrollAppBar"
       >
+        <a class="app-bar-link">Willkommen</a>
+        <a class="app-bar-link">Menü</a>
+        <a class="app-bar-link">Getränke</a>
         
-        <v-app-bar-nav-icon
-          @click="drawer = !drawer"
-          x-large
-          :color="appbar.navicon_color"
-        ></v-app-bar-nav-icon>
-
+        <v-spacer/>
         <router-link
           to="/"
         >
@@ -118,40 +115,13 @@
           max-height="100"
           max-width="100"
           contain
-          v-show="appbar.logo"
+          v-show="true"
         />
         </router-link>
-
         <v-spacer/>
-        
-        <v-chip
-          class="ma-2"
-          color="green"
-          outlined
-        > 
-          <v-icon
-            left
-          >
-            mdi-clock
-          </v-icon>
-          {{ $t('AppBar.open') }}
-        </v-chip>
-
-        <v-chip
-          class="ma-2"
-          color="primary"
-          :text-color="appbar.chip_phone_textcolor"
-          outlined
-        >
-          <v-icon
-            left
-          >
-            mdi-phone-outline
-          </v-icon>
-          +49 7832-8977
-
-        </v-chip>
-      
+        <a class="app-bar-link">Karriere</a>
+        <a class="app-bar-link">Kontakt</a>
+        <a class="app-bar-link">Impressum</a>
       </v-app-bar>
 
       <transition name="fade">
