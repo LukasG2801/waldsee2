@@ -9,9 +9,11 @@
             fill-height
             ref="banner_container"
         >
+            
             <v-container class="d-flex flex-column">
                 <p class="food-banner-subtitle"></p>
             </v-container>
+
         </v-container>
 
         <v-container class="d-flex justify-center pt-10">
@@ -19,10 +21,11 @@
                 :items="aBreadcrumbs"
             ></v-breadcrumbs>
         </v-container>
+
         <v-container
             class="food-menu-container"
         >
-            <p class="food-menu-title">{{ $t('Food.Menu.Title')}}</p>
+            <p class="site-title">{{ $t('Food.Menu.Title')}}</p>
             <v-toolbar
                 flat
                 light
@@ -52,6 +55,7 @@
                 </v-btn>
             </v-toolbar>
 
+            <v-container class="d-flex pl-10">
             <v-tabs vertical>
                 <v-tab
                     v-for="categorie in dish_categories"
@@ -65,7 +69,6 @@
                 <v-tab-item
                     v-for="categorie in dish_categories"
                     :key="categorie.id"
-                    
                 >
                     <v-list class="food-menu-list">
                         <v-list-item
@@ -81,14 +84,15 @@
                                     class="menu-dish-title"
                                 ></v-list-item-title>
                                 
-                                <v-list-item-subtitle class="cursive" style="margin-top: 5px">{{ dish.acf.Beilagen }}</v-list-item-subtitle>
-                                <v-list-item-subtitle style="margin-top: 5px">{{ dish.acf.Preis }} €</v-list-item-subtitle>
+                                <v-list-item-subtitle class="cursive" style="margin-top: 5px">{{ dish.acf.Beilage }}</v-list-item-subtitle>
+                                <v-list-item-subtitle style="margin-top: 5px">{{ dish.acf.preis }} €</v-list-item-subtitle>
                            
                             </v-list-item-content>
                         </v-list-item>
                     </v-list>
                 </v-tab-item>
             </v-tabs>
+            </v-container>
         </v-container>
     </v-container>
 </template>
@@ -198,7 +202,7 @@
             },
 
             onShare() {
-                navigator.share()
+                
             },
 
             onPrint() {
@@ -215,83 +219,4 @@
 </script>
 
 <style scoped>
-
-.food-main-container{
-    margin: 30;
-    display: grid; 
-    grid-template-columns: 1fr 2fr 1fr;
-}
-
-.food-menu-list{
-    padding-left: 12vw;
-}
-
-.food-banner {
-    height: 70vh;
-    width: 100%;
-    /* background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/food_welcome.jpg'); */
-    background: url('../assets/food_welcome.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    z-index: 2;
-    box-shadow: 0 4px 5px -1px gray;
-}
-
-.food-banner-subtitle{
-    color:white;
-}
-
-.food-menu-container{
-    background: white;
-    margin-top: 5vh;
-}
-
-.food-menu-title{
-    text-align: center;
-    font-family: 'Satisfy', cursive;
-    font-size: 2.5rem;
-    color: #6e602f;
-}
-
-.food-menu-sidemenu{
-    /* position: fixed;
-    top: 50vh;
-    left: 20vw;
-    display: flex; 
-    flex-direction: column;
-    padding: 1vw;
-    width: auto;
-    z-index: 1; */
-    position: sticky;
-    top: 0px;
-}
-
-.fade-enter-active {
-  transition: opacity .8s;
-}
-
-.fade-enter {
-  opacity: 0;
-}
-
-.food-menu-sidemenu-links {
-    color: #6e602f;
-    padding-bottom: 1vh;
-    font-style: italic;
-}
-
-.menu-categorie-title {
-    padding-bottom: 5vh;
-    padding-top: 10vh;
-    text-decoration: underline;
-}
-
-.cursive{
-    font-style: italic;
-}
-
-.menu-dish-title{
-    color: #6e602f;
-}
 </style>

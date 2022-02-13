@@ -6,10 +6,9 @@
     <v-container
         fluid
         class="food-intro d-flex justify-center align-center flex-row"
-        height="50vh"
     >
         <img 
-            src="../assets/food1.jpg" 
+            src="../assets/food1_opt.jpg" 
             class="food-intro-image"
             v-show="!loading"
         />
@@ -43,11 +42,11 @@
         </div>
     </v-container>
     
-    <v-container class="d-flex justify-center">
+    <v-container class="d-flex justify-center pt-10 pb-10">
         <v-container
             v-show="!loading"
-            v-for="(img, i) in intro_images"
-            :key="i"
+            v-for="img in intro_images"
+            :key="img.path"
             class="food-intro-image-container"
         >
         <img 
@@ -80,14 +79,14 @@ export default {
     data: () => ({
         loading: true,
         intro_images: [
-            { path: require('../assets/food_intro1.jpg'), text: 'Food.Intro.Image.regional'},
-            { path: require('../assets/food_intro2.jpg'), text: 'Food.Intro.Image.seasonal'},
-            { path: require('../assets/food_intro3.jpg'), text: 'Food.Intro.Image.fresh'}
+            { path: require('../assets/food_intro1_opt.jpg'), text: 'Food.Intro.Image.regional'},
+            { path: require('../assets/food_intro2_opt.jpg'), text: 'Food.Intro.Image.seasonal'},
+            { path: require('../assets/food_intro3_opt.jpg'), text: 'Food.Intro.Image.fresh'}
         ],
         imagesToPreload: [
-            'food_intro1.jpg',
-            'food_intro2.jpg',
-            'food_intro3.jpg'
+            'food_intro1_opt.jpg',
+            'food_intro2_opt.jpg',
+            'food_intro3_opt.jpg'
         ],
     }),
     

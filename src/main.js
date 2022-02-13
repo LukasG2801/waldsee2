@@ -11,7 +11,7 @@ Vue.config.productionTip = false
 const base = axios.create({
     // baseURL: 'http://192.168.178.27/wordpress'
     // baseURL: 'http://127.0.0.1/wordpress'
-    baseURL: 'http://waldsee.todesstern.me'
+    baseURL: 'https://waldsee.todesstern.me'
 })
 
 Vue.prototype.$http = base

@@ -86,7 +86,7 @@
           </div>
           
           <div class="side-menu-image-container">
-            <v-img :src="require('./assets/welcome.jpg')" class="side-menu-image"/>
+            <!-- <v-img :src="require('./assets/welcome.jpg')" class="side-menu-image"/> -->
           </div>
         
         </div>
@@ -101,9 +101,9 @@
         class="pl-8 pr-8"
         v-scroll="onScrollAppBar"
       >
-        <a class="app-bar-link">Willkommen</a>
-        <a class="app-bar-link">Menü</a>
-        <a class="app-bar-link">Getränke</a>
+        <router-link class="app-bar-link" to="/">{{ $t('AppBar.Link.Welcome') }}</router-link>
+        <router-link class="app-bar-link" to="/food">{{ $t('AppBar.Link.Menu') }}</router-link>
+        <router-link class="app-bar-link" to="/drinks">{{ $t('AppBar.Link.Drinks') }}</router-link>
         
         <v-spacer/>
         <router-link
@@ -119,9 +119,9 @@
         />
         </router-link>
         <v-spacer/>
-        <a class="app-bar-link">Karriere</a>
-        <a class="app-bar-link">Kontakt</a>
-        <a class="app-bar-link">Impressum</a>
+        <router-link class="app-bar-link" to="/imprint">{{ $t('AppBar.Link.Career') }}</router-link>
+        <router-link class="app-bar-link" to="/imprint">{{ $t('AppBar.Link.Contact') }}</router-link>
+        <router-link class="app-bar-link" to="/imprint">{{ $t('AppBar.Link.Impressum') }}</router-link>
       </v-app-bar>
 
       <transition name="fade">
@@ -281,19 +281,16 @@
         </v-container>
       </v-main>
 
-      <v-overlay :value="isLoading">
-        <v-progress-circular
-          indeterminate
-          size="64"
-        >
-      </v-progress-circular>
-    </v-overlay>
+      <v-footer>
+        <CookieLaw/>
+      </v-footer>
     </v-app>          
 </template>
 
 <script>
 import Footer from './components/Footer.vue'
 import i18n from './i18n.js'
+import CookieLaw from 'vue-cookie-law'
 
 export default {
   name: 'App',
@@ -323,7 +320,6 @@ export default {
     drawer: false,
     imagesToPreload: [
       'logo_white.png',
-      'banner1.jpg',
       'banner2.jpg',
       'banner3.jpg',
       'food1.jpg',
@@ -335,7 +331,8 @@ export default {
   }),
 
   components: {
-    'Footer': Footer
+    'Footer': Footer,
+    CookieLaw
   },
 
   methods: {

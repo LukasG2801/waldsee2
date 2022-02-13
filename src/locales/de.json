@@ -11,5 +11,15 @@
     "language.french": "Französisch",
     "Food.Intro.Image.fresh": "Frisch",
     "Food.Intro.Image.regional": "Regional",
-    "Food.Intro.Image.seasonal": "Saisonal"
+    "Food.Intro.Image.seasonal": "Saisonal",
+    "AppBar.Link.Menu": "Menü",
+    "AppBar.Link.Welcome": "Willkommen",
+    "AppBar.Link.Drinks": "Getränke",
+    "AppBar.Link.Career": "Karriere",
+    "AppBar.Link.Contact": "Kontakt",
+    "AppBar.Link.Impressum": "Impressum",
+    "Imprint.Title": "Impressum",
+    "Breadcrumbs.node.Welcome": "Willkommen",
+    "Breadcrumbs.node.Imprint": "Impressum"
+
 }
