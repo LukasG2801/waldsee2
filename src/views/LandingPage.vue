@@ -9,57 +9,13 @@
             fill-height
             onscroll="onScrollMainContainer"
         >
-            <!-- <div class="d-flex justify-center align-center flex-column">
-                <v-img src="../assets/logo_white.png" max-width="400px" elevation="5"></v-img>
-                <p class="slogan-subtitle">"{{ $t('LandingPage.slogan') }}"</p>
-            </div> -->
         </v-container>
 
-        <FoodIntro/>
-        
+        <Welcome/>
         <Location/>
-        
-        <v-container
-            fluid
-            height="50vh"
-            class="ratings-container"
-        >
-            <p class="ratings-title mt-8" color="seccondary" style="text-align: center;">... Und was denken unsere Gäste von uns ?</p>
-            <Ratings/>
-            
-            <v-container class="d-flex justify-center">
-                <v-btn 
-                    outlined
-                    class="pa-2 ma-2"
-                    color="secondary"
-                    dark
-                    fab
-                    elevation="5"
-                >
-                    <v-icon>mdi-google</v-icon>
-                </v-btn>
-                <v-btn 
-                    outlined
-                    class="pa-2 ma-2"
-                    color="secondary"
-                    fab
-                    elevation="5"
-                >
-                    <v-icon>fa-tripadvisor</v-icon>
-                </v-btn>
-                <v-btn 
-                    outlined
-                    class="pa-2 ma-2"
-                    color="secondary"
-                    fab
-                    elevation="5"
-                >
-                    <v-icon>fa-yelp</v-icon>
-                </v-btn>
-            </v-container>
-        </v-container>
-
+        <FoodIntro/>
         <Minigolf/>
+        <Ratings/>
     </v-container>
 </template>
 
@@ -69,6 +25,7 @@
     import Minigolf from '../components/Minigolf'
     import Location from '../components/Location'
     import FoodIntro from '../components/Food_Intro'
+    import Welcome from '../components/Welcome'
 
     export default {
         data: () => ({
@@ -83,10 +40,11 @@
         },
 
         components: {
-            'Ratings': Ratings,
-            'Minigolf': Minigolf,
-            'Location': Location,
-            FoodIntro
+            Ratings,
+            Minigolf,
+            Location,
+            FoodIntro,
+            Welcome
         },
 
         methods:{
@@ -94,14 +52,6 @@
                 alert("onscroll")
             },
             
-            /**
-             * get ratings from wordpress and set them to the store
-             */
-            async fetchRatings() {
-                let response = await this.$http.get('/wp-json/wp/v2/reviews')
-                this.$store.commit('ratings/set_ratings', response.data)
-            },
-
             openRating(url){
                 window.open(url)
             }
@@ -122,10 +72,6 @@
                 }
             }
         },
-
-        created () {
-            this.fetchRatings()
-        }
     }
 </script>
 
@@ -140,25 +86,12 @@
 .welcome-screen {
     height: 80vh;
     width: 100%;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1) ), url('../assets/food_landing_banner.jpg');
-    /* background: url('../assets/food_landing_banner.jpg'); */
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1) ), url('../assets/food_landing_banner_opt.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     box-shadow: 0 4px 5px -1px gray;
-}
-
-.ratings-container{
-    width: 100%;
-    box-shadow: 0 4px 5px -1px gray;
-}
-
-.ratings-title{
-    /* font-family: 'Satisfy', cursive; */
-    font-family: "Bergell";
-    font-size: 2.5rem;
-    color: #6e602f;
 }
 
 .welcome-screen-center{

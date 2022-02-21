@@ -4,7 +4,7 @@
         class="ma-0 pa-0" 
     >
         <v-parallax 
-            src="../assets/footer_background.jpg"
+            src="../assets/footer_background_opt.jpg"
             height="400"
         >
         

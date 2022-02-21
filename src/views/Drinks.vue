@@ -36,13 +36,13 @@ export default {
 @import url('../styles/style.css');
 
 .drink-banner{
-    height: 70vh;
+    height: 80vh;
     width: 100%;
-    /* background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/food_welcome.jpg'); */
-    background: url('../assets/drink_welcome.jpg');
+    background: url('../assets/drink_welcome_opt.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
     z-index: 2;
     box-shadow: 0 4px 5px -1px gray;
 }
