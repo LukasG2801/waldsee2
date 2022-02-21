@@ -2,7 +2,6 @@
     <v-container 
         fluid
         class="location-intro"
-        height="100vh"
     >
         <div class="location-intro-text">
             <p class="location-intro-text-title">Was zeichnet uns eigentlich aus ?</p>

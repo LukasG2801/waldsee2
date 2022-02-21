@@ -2,10 +2,25 @@
     <v-app>
       <v-navigation-drawer
         v-model="drawer"
-        bottom
-        temporary
+        clipped
+        width="100vw"
         app
+        class="pa-5"
       >
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="app-bar-nav-icon"></v-app-bar-nav-icon>
+        <v-container
+          width="100vw"
+          class="d-flex align-center justify-center"
+        >
+          <v-list>
+            <v-list-item
+              v-for="item in navDrawerItems"
+              :key="item"
+            >
+              <router-link :to="item.path" class="nav-drawer-link">{{ item.text }}</router-link>
+            </v-list-item>
+          </v-list>
+        </v-container>
       </v-navigation-drawer>
 
       <v-app-bar
@@ -14,28 +29,33 @@
         elevate-on-scroll
         elevation="5"
         height="100px"
-        class="pl-8 pr-8"
+        class="wl-appbar"
         v-scroll="onScrollAppBar"
         clipped-left
       >
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="app-bar-nav-icon"></v-app-bar-nav-icon>
+
         <router-link class="app-bar-link" to="/">{{ $t('AppBar.Link.Welcome') }}</router-link>
         <router-link class="app-bar-link" to="/food">{{ $t('AppBar.Link.Menu') }}</router-link>
         <router-link class="app-bar-link" to="/drinks">{{ $t('AppBar.Link.Drinks') }}</router-link>
         
-        <v-spacer/>
+        <v-spacer class="wl-appbar-spacer"/>
+
         <router-link
           to="/"
         >
-        <v-img
-          class="mx-2 ml-10"
-          src="./assets/logo_black.png"
-          max-height="100"
-          max-width="100"
-          contain
-          v-show="true"
-        />
+          <v-img
+            class="mx-2 ml-10"
+            src="./assets/logo_black.png"
+            max-height="100"
+            max-width="100"
+            contain
+            v-show="true"
+          />
         </router-link>
+        
         <v-spacer/>
+        
         <router-link class="app-bar-link" to="/imprint">{{ $t('AppBar.Link.Career') }}</router-link>
         <router-link class="app-bar-link" to="/imprint">{{ $t('AppBar.Link.Contact') }}</router-link>
         <router-link class="app-bar-link" to="/imprint">{{ $t('AppBar.Link.Impressum') }}</router-link>
@@ -246,12 +266,12 @@ export default {
     isLoading: false,
     sideMenu: false,
     navDrawerItems: [
-      'Willkommen',
-      'Menü',
-      'Getränke',
-      'Karriere',
-      'Kontakt',
-      'Impressum'
+      { text: 'Wilkommen', path: '/'},
+      { text: 'Menü', path: '/food'},
+      { text: 'Getränke', path: '/drinks'},
+      { text: 'Karriere', path: '/imprint'},
+      { text: 'Kontakt', path: '/imprint'},
+      { text: 'Impressum', path: '/imprint'}
     ]
   }),
 

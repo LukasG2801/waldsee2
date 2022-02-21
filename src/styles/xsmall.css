@@ -60,27 +60,39 @@
 }
 
 .location-intro {
-    height: 100vh;
-    width: 100%;
-    background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url('../assets/location1_opt.jpg');
-    /* background: url('../assets/.jpg'); */
+    width: 100vw;
+    height: auto;
+    background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url('../assets/location1_opt.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding-top: 70vh;
+    background-attachment: fixed;
+    padding-top: 30vh;
     padding-left: 2vw;
+    box-shadow: 0px -4px 5px -1px gray;
+}
+
+.location-intro-text {
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100vh;
+    padding: 5vw;
 }
 
 .location-intro-text-title {
     color: white;
     font-family: 'Satisfy', cursive;
     font-size: 2.5rem;
-    width: 20vw;
 }
 
 .location-intro-text-subtitle {
     color: white;
-    width: 40vw;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .food-intro {
@@ -105,7 +117,7 @@
 }
 
 .app-bar-link {
-    visibility: hidden;
+    display: none;
 }
 
 .nav-drawer-link {
@@ -115,4 +127,44 @@
     font-weight: bold;
     color: #6e602f !important;
     visibility: visible;
+}
+
+.fab-menu {
+    display: none;
+}
+
+.wl-appbar-spacer {}
+
+.welcome-screen {
+    height: 80vh;
+    width: 100vw;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url('../assets/food_landing_banner_opt.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    box-shadow: 0 4px 5px -1px gray;
+}
+
+.welcome-container {
+    height: auto;
+}
+
+.welcome-img {
+    height: 449px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10vh;
+}
+
+.welcome-text-container {
+    text-align: center;
+    margin: 5vw;
+    padding: 0;
+    width: 100vw;
+}
+
+.welcome-text-heading {
+    font-family: "Bergell";
+    color: #6e602f;
 }

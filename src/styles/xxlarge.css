@@ -221,3 +221,41 @@
 .menu-dish-title {
     color: #6e602f;
 }
+
+.wl-appbar {
+    padding-left: 8;
+    padding-right: 8;
+}
+
+.welcome-screen {
+    height: 80vh;
+    width: 100%;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url('../assets/food_landing_banner_opt.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    box-shadow: 0 4px 5px -1px gray;
+}
+
+.welcome-container {
+    height: 70vh;
+}
+
+.welcome-img {
+    height: 449px;
+    padding: 0;
+    margin: 0;
+}
+
+.welcome-text-container {
+    text-align: center;
+    margin: 5vw;
+    padding: 0;
+    width: 20vw;
+}
+
+.welcome-text-heading {
+    font-family: "Bergell";
+    color: #6e602f;
+}

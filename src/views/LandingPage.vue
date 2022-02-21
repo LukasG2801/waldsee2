@@ -83,17 +83,6 @@
     margin: 0;
 }
 
-.welcome-screen {
-    height: 80vh;
-    width: 100%;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1) ), url('../assets/food_landing_banner_opt.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    box-shadow: 0 4px 5px -1px gray;
-}
-
 .welcome-screen-center{
     position: absolute;
     top: 50%;
