@@ -3,93 +3,19 @@
       
       <v-navigation-drawer
         v-model="drawer"
-        bottom
-        temporary
-        width="60vw"
+        style="padding-top: 100px"
         app
-        style="z-index: 99;"
+        width="100vw"
+        clipped
       >
-        <div
-          class="side-nav-container"
-        > 
-        
-          <div class="side-menu-menu-container">
-            
-            <router-link to="/">
-              <img 
-                :src="require('./assets/logo_black.png')" 
-                class="side-menu-menu-logo"
-              />
-            </router-link>
-            
-            <!-- <p class="side-menu-menu-title">Menu</p> -->
-            <ul class="side-menu-menu">
-              <li 
-                v-for="item in items"
-                :key="item.text"
-              >
-                <router-link :to="item.path">
-                  <p class="side-menu-menu-link">{{ item.text }}</p>
-                </router-link>
-              </li>
-            </ul>
-
-            <v-btn
-              icon
-              @click="drawer = !drawer"
-              x-large
-              style="margin-top: 50px;"
-            >
-              <v-icon>mdi-close</v-icon>
-            </v-btn>
-
-            <div
-              class="side-menu-social-container"
-            >
-              <v-btn
-                color="primary"
-                icon
-                rounded
-                x-large
-              >
-                <v-icon>mdi-facebook</v-icon>
-              </v-btn>
-              <v-btn
-                color="primary"
-                icon
-                rounded
-                x-large
-              >
-                <v-icon>mdi-instagram</v-icon>
-              </v-btn>
-
-              <v-btn
-                color="primary"
-                icon
-                rounded
-                x-large
-                @click="onOpenMail"
-              >
-                <v-icon>mdi-email</v-icon>
-              </v-btn>
-
-              <v-btn
-                color="primary"
-                icon
-                rounded
-                x-large
-              >
-                <v-icon>mdi-google</v-icon>
-              </v-btn>
-            </div>
-
-          </div>
-          
-          <div class="side-menu-image-container">
-            <v-img :src="require('./assets/welcome.jpg')" class="side-menu-image"/>
-          </div>
-        
-        </div>
+        <v-list>
+          <v-list-item
+            v-for="item in navDrawerItems"
+            :key="item"
+          >
+            <a class="nav-drawer-link">{{ item }}</a>
+          </v-list-item>
+        </v-list>
       </v-navigation-drawer>
 
       <v-app-bar
@@ -100,7 +26,10 @@
         height="100px"
         class="pl-8 pr-8"
         v-scroll="onScrollAppBar"
+        clipped-left
       >
+        <v-app-bar-nav-icon class="app-bar-nav-icon" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+        
         <a class="app-bar-link">Willkommen</a>
         <a class="app-bar-link">Menü</a>
         <a class="app-bar-link">Getränke</a>
@@ -331,7 +260,15 @@ export default {
       'welcome.jpg'
     ],
     isLoading: false,
-    sideMenu: false
+    sideMenu: false,
+    navDrawerItems: [
+      'Willkommen',
+      'Menü',
+      'Getränke',
+      'Karriere',
+      'Kontakt',
+      'Impressum'
+    ]
   }),
 
   components: {

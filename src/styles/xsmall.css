@@ -103,3 +103,16 @@
 .food-into-text-subtitle {
     text-align: justify;
 }
+
+.app-bar-link {
+    visibility: hidden;
+}
+
+.nav-drawer-link {
+    font-family: "Bergell";
+    font-size: 1.3rem;
+    padding-right: 1.3vw;
+    font-weight: bold;
+    color: #6e602f !important;
+    visibility: visible;
+}

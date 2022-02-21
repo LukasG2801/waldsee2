@@ -15,6 +15,11 @@
     padding-right: 1.3vw;
     font-weight: bold;
     color: #6e602f !important;
+    visibility: visible;
+}
+
+.app-bar-nav-icon {
+    visibility: hidden;
 }
 
 .content {
