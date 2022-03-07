@@ -15,7 +15,7 @@
           <v-list>
             <v-list-item
               v-for="item in navDrawerItems"
-              :key="item"
+              :key="item.text"
             >
               <router-link :to="item.path" class="nav-drawer-link">{{ item.text }}</router-link>
             </v-list-item>
@@ -45,7 +45,7 @@
           to="/"
         >
           <v-img
-            class="mx-2 ml-10"
+            class="pt-5 pr-10"
             src="./assets/logo_black.png"
             max-height="100"
             max-width="100"

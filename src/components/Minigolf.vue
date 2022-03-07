@@ -29,16 +29,5 @@ export default {
 
 </script>
 <style scoped>
-.minigolf-intro{
-    height: 100vh;
-    width: 100%;
-    background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url('../assets/minigolf_opt.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    padding-top: 60vh;
-    padding-left: 2vw;
-    box-shadow: 0px -4px 5px -1px gray;
-}
+
 </style>

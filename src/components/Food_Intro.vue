@@ -5,19 +5,12 @@
     >
     <v-container
         fluid
-        class="food-intro d-flex justify-center align-center flex-row"
+        class="food-intro"
     >
         <img 
             src="../assets/food1_opt.jpg" 
             class="food-intro-image"
             v-show="!loading"
-        />
-
-        <v-skeleton-loader
-            width="500"
-            height="30vh"
-            type="image"
-            v-show="loading"
         />
 
         <div class="food-intro-text">
@@ -42,7 +35,7 @@
         </div>
     </v-container>
     
-    <v-container class="d-flex justify-center pt-10 pb-10">
+    <v-container class="food-intro-hover-images-container">
         <v-container
             v-show="!loading"
             v-for="img in intro_images"
@@ -121,11 +114,11 @@ export default {
     width: 100%;
 }
 
-.food-intro-image-container{
+/* .food-intro-image-container{
     position: relative;
     padding: 0;
     margin: 0;
-}
+} */
 
 .overlay {
     position: absolute; 

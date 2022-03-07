@@ -15,7 +15,7 @@
     padding-right: 1.3vw;
     font-weight: bold;
     color: #6e602f !important;
-    visibility: visible;
+    display: inline;
 }
 
 .app-bar-nav-icon {
@@ -130,8 +130,11 @@
 .food-intro {
     height: 50vh;
     box-shadow: 0 4px 5px -1px gray;
-    /* background-color: #E7E7E6; */
     background-color: white;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
 }
 
 .food-intro-text {
@@ -156,6 +159,7 @@
 
 .ratings-container {
     width: 100%;
+    height: 50vh;
     box-shadow: 0 4px 5px -1px gray;
 }
 
@@ -258,4 +262,17 @@
 .welcome-text-heading {
     font-family: "Bergell";
     color: #6e602f;
+}
+
+.minigolf-intro {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url('../assets/minigolf_opt.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 60vh;
+    padding-left: 2vw;
+    box-shadow: 0px -4px 5px -1px gray;
 }

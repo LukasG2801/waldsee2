@@ -2,14 +2,13 @@
 
         <v-container
             fluid
-            height="50vh"
             class="ratings-container"
         >
             <p class="ratings-title mt-8" color="seccondary" style="text-align: center;">... Und was denken unsere Gäste von uns ?</p>
             
     <v-slide-group
         v-model="rating_carousel"
-        class="pa-4"
+        class="pa-4 rating-carousel"
         show-arrows
         v-show="!loading"
     >
@@ -81,14 +80,14 @@
             </v-container>
 
     <v-container
-        class="d-flex"
+        class="ratings-container-skeleton"
     >
         <v-skeleton-loader
             v-for="i in 5"
             :key="i"
             type="card"
             width="18%"
-            class="mx-auto"
+            class="mx-auto rating-skeleton-card"
             v-show="loading"
         />
     </v-container>

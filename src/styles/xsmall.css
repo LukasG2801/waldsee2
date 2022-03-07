@@ -96,9 +96,34 @@
 }
 
 .food-intro {
-    height: 50vh;
+    height: auto;
     box-shadow: 0 4px 5px -1px gray;
-    background-color: #E7E7E6;
+    background-color: white;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 10vh;
+}
+
+.food-intro-hover-images-container {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    padding-top: 5vh;
+    padding-bottom: 10vh;
+}
+
+.food-intro-image-container {
+    position: relative;
+    padding: 0;
+    margin-bottom: 5vh;
+    margin: 0;
+}
+
+.food-intro-image {
+    width: 90vw;
+    padding-bottom: 10vh;
 }
 
 .food-intro-text {
@@ -167,4 +192,47 @@
 .welcome-text-heading {
     font-family: "Bergell";
     color: #6e602f;
+}
+
+.minigolf-intro {
+    height: auto;
+    width: 100%;
+    background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url('../assets/minigolf_opt.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 60vh;
+    padding-left: 2vw;
+    box-shadow: 0px -4px 5px -1px gray;
+}
+
+.ratings-container {
+    width: 100vw;
+    height: auto;
+}
+
+.rating-carousel {
+    display: flex;
+    flex-direction: column;
+}
+
+.rating-card {
+    width: 100vw;
+}
+
+.ratings-container-skeleton {
+    display: flex;
+    flex-direction: column;
+}
+
+.rating-skeleton-card {
+    min-width: 80vw;
+}
+
+.partner-logo-container {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
 }

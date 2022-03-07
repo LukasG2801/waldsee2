@@ -124,7 +124,7 @@
         </v-parallax>
 
         <v-container
-            class="d-flex justify-center"
+            class="partner-logo-container"
         >
             <v-img
                 class="mx-2 ml-10"
