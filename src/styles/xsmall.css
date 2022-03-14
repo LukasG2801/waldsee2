@@ -155,7 +155,7 @@
 }
 
 .fab-menu {
-    display: none;
+    visibility: hidden;
 }
 
 .wl-appbar-spacer {}

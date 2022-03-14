@@ -20,6 +20,9 @@
     "AppBar.Link.Impressum": "Impressum",
     "Imprint.Title": "Impressum",
     "Breadcrumbs.node.Welcome": "Willkommen",
-    "Breadcrumbs.node.Imprint": "Impressum"
+    "Breadcrumbs.node.Imprint": "Impressum",
+    "Breadcrumbs.node.Contact": "Kontakt",
+    "Contact.Title": "Kontakt",
+    "Contact.OpeningHours": "Öffnungszeiten"
 
 }

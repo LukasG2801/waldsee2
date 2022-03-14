@@ -57,7 +57,7 @@
         <v-spacer/>
         
         <router-link class="app-bar-link" to="/imprint">{{ $t('AppBar.Link.Career') }}</router-link>
-        <router-link class="app-bar-link" to="/imprint">{{ $t('AppBar.Link.Contact') }}</router-link>
+        <router-link class="app-bar-link" to="/contact">{{ $t('AppBar.Link.Contact') }}</router-link>
         <router-link class="app-bar-link" to="/imprint">{{ $t('AppBar.Link.Impressum') }}</router-link>
       </v-app-bar>
 
@@ -270,7 +270,7 @@ export default {
       { text: 'Menü', path: '/food'},
       { text: 'Getränke', path: '/drinks'},
       { text: 'Karriere', path: '/imprint'},
-      { text: 'Kontakt', path: '/imprint'},
+      { text: 'Kontakt', path: '/contact'},
       { text: 'Impressum', path: '/imprint'}
     ]
   }),

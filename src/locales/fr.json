@@ -20,5 +20,8 @@
     "AppBar.Link.Impressum": "Imprimer",
     "Imprint.Title": "Imprimer",
     "Breadcrumbs.node.Welcome": "Bienvenue",
-    "Breadcrumbs.node.Imprint": "Imprimer"
+    "Breadcrumbs.node.Imprint": "Imprimer",
+    "Breadcrumbs.node.Contact": "Contact",
+    "Contact.Title": "Contact",
+    "Contact.OpeningHours": "Horaires d'ouvertures"
 }

@@ -15,16 +15,6 @@ export default {
     data: () => ({
 
     }),
-
-    methods: {
-        test() {
-            console.log("transition")
-        }
-    },
-
-    created() {
-
-    }
 }
 
 </script>

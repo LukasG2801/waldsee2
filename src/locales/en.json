@@ -20,5 +20,8 @@
     "AppBar.Link.Impressum": "Imprint",
     "Imprint.Title": "Imprint",
     "Breadcrumbs.node.Welcome": "Welcome",
-    "Breadcrumbs.node.Imprint": "Imprint"
+    "Breadcrumbs.node.Imprint": "Imprint",
+    "Breadcrumbs.node.Contact": "Contact",
+    "Contact.Title": "Contact",
+    "Contact.OpeningHours": "Opening Hours"
 }

@@ -6,6 +6,7 @@ import Reservation from '../views/Reservation.vue'
 import Food from '../views/Food.vue'
 import Drinks from '../views/Drinks.vue'
 import Imprint from '../views/Imprint.vue'
+import Contact from '../views/Contact.vue'
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,11 @@ const routes = [{
         path: '/imprint',
         name: 'Imprint',
         component: Imprint
+    },
+    {
+        path: '/contact',
+        name: 'Contact',
+        component: Contact
     }
 ]
 

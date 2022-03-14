@@ -11,7 +11,21 @@
 
         <v-container class="welcome-text-container">
             <h2 class="welcome-text-heading">Herzlich Willkommen</h2>
-            <p style="padding-top: 5vh;">Wir freuen uns, Sie bei uns, in der Waldsee Terrasse begrüßen zu dürfen.</p>
+            <p style="padding-top: 5vh;">Wir freuen uns, Sie bei uns, in der Waldsee Terrasse begrüßen zu dürfen. Neben unserem einzigartigen Ambiente bieten 
+                wir ihnen regionale und saisonale Köstlichkeiten.
+            </p>
+            <p>Unsere Öffnungszeiten finden Sie hier:</p>
+            <v-btn
+                color="secondary"
+                outlined
+                class="mt-5"
+                to="/contact"
+            >
+                <v-icon left>
+                    mdi-clock
+                </v-icon>
+                Öffnungszeiten
+            </v-btn>
         </v-container>
     
     </v-container>
