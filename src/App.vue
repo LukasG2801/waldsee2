@@ -152,42 +152,7 @@
             <span>Getränkekarte</span>
           </v-tooltip>
 
-          <v-menu
-            rounded="false"
-            offset-x
-          >          
-            <template v-slot:activator="{ attrs, on }">
-              <v-btn 
-                dark 
-                color="secondary" 
-                height="50px" 
-                tile
-                v-bind="attrs"
-                v-on="on"
-              >
-                <!-- <country-flag country="de" size="small"/> -->
-                <p>{{ $i18n.locale }}</p>
-              </v-btn>
-            </template>
-          
-          <v-list
-          >
-            <v-list-item-group
-              v-model="$i18n.locale"
-            >
-            <v-list-item
-              v-for="(lang, i) in languages"
-              :key="`Lang${i}`"
-              :value="lang.code"
-              link
-            >
-              <v-list-item-title>
-                {{ lang.description }}
-              </v-list-item-title>
-            </v-list-item>
-            </v-list-item-group>
-          </v-list>
-        </v-menu>
+
       </v-layout>
       </transition>
 

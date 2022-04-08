@@ -31,28 +31,65 @@
                 light
             >
                 <v-spacer/>
-                <v-btn
-                    icon
-                    small
-                    rounded
-                    elevation="5"
-                    class="mx-2"
-                    color="secondary"
-                    @click="onPrint"
-                >
-                    <v-icon small>mdi-printer</v-icon>
-                </v-btn>
-                <v-btn
-                    icon
-                    small
-                    rounded
-                    elevation="5"
-                    class="mx-2"
-                    color="secondary"
-                    @click="onShare"
-                >
-                    <v-icon small>mdi-share-variant</v-icon>
-                </v-btn>
+                <v-tooltip bottom>
+                    <template v-slot:activator="{ on, attrs }">
+                        <v-btn
+                            icon
+                            small
+                            rounded
+                            elevation="5"
+                            class="mx-2"
+                            color="secondary"
+                            @click="onDownload"
+                            v-bind="attrs"
+                            v-on="on"
+                        >
+                            <v-icon small>mdi-file-pdf-box</v-icon>
+                        </v-btn>
+                    </template>
+                    
+                    <span>Als PDF anzeigen</span>
+                </v-tooltip>
+
+                <v-tooltip bottom>
+                    <template v-slot:activator="{ on, attrs }">
+                        <v-btn
+                            icon
+                            small
+                            rounded
+                            elevation="5"
+                            class="mx-2"
+                            color="secondary"
+                            @click="onPrint"
+                            v-bind="attrs"
+                            v-on="on"
+                        >
+                            <v-icon small>mdi-printer</v-icon>
+                        </v-btn>
+                    </template>
+                    
+                    <span>Drucken</span>
+                </v-tooltip>
+
+                <v-tooltip bottom>
+                    <template v-slot:activator="{ on, attrs }">
+                        <v-btn
+                            icon
+                            small
+                            rounded
+                            elevation="5"
+                            class="mx-2"
+                            color="secondary"
+                            @click="onShare"
+                            v-bind="attrs"
+                            v-on="on"
+                        >
+                            <v-icon small>mdi-share-variant</v-icon>
+                        </v-btn>
+                    </template>
+                    
+                    <span>Teilen</span>
+                </v-tooltip>
             </v-toolbar>
 
             <v-container class="d-flex pl-10">
@@ -207,6 +244,13 @@
 
             onPrint() {
                 window.print()
+            },
+
+            onDownload() {
+                var link = document.createElement('a');
+                link.href = require("@/assets/SPEISEKARTE.pdf");
+                link.download = 'Waldsee-Speisekarte.pdf';
+                link.click()
             }
          },
 
