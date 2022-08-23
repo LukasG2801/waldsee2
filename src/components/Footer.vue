@@ -71,6 +71,11 @@
                             </v-container>
                         </v-col>
                     </v-row>
+                    <v-row>
+                        <p class="pb-5">
+                            Reservierungen werden nur telefonisch entgegengenommen
+                        </p>
+                    </v-row>
                 </v-container>
             </div>
             </v-col>

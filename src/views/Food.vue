@@ -130,6 +130,7 @@
     import KidsComp from '../components/foods/kids.vue'
     import VesperComp from '../components/foods/vesper.vue'
     import WurstComp from '../components/foods/wurst.vue'
+    import EisComp from '../components/foods/Eis.vue'
 
     export default {
         data: () => ({
@@ -155,7 +156,8 @@
                 { label: 'Spaghetti', component: SpaghettiComp},
                 { label: 'für kleine Gäste', component: KidsComp},
                 { label: 'Vesper', component: VesperComp},
-                { label: "hier geht's um die WURST", component: WurstComp}
+                { label: "hier geht's um die WURST", component: WurstComp},
+                { label: "Eis", component: EisComp}
             ],
             tab: null
         }),
@@ -177,7 +179,8 @@
             AsiaComp,
             KidsComp,
             WurstComp,
-            VesperComp
+            VesperComp,
+            EisComp
         },
 
         methods: {

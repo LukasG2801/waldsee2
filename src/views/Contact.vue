@@ -49,6 +49,9 @@
             <p>
                 www.waldsee-terrasse.de
             </p>
+            <p>
+                Reservierungen werden nur telefonisch entgegengenommen
+            </p>
         </v-container>
         <v-container class="pt-10">
             <p class="site-subtitle">{{ $t('Contact.OpeningHours')}}</p>
@@ -74,8 +77,10 @@
             </p>
             <br/>
             <p>Durchgehend warme Küche:</p>
-            <p>Werktags von 11:30 Uhr - 20:30 Uhr</p>
-            <p>Sonn- und Feiertags von 11:30 Uhr - 19:30 Uhr</p>
+            <p>Werktags von 11:30 Uhr - 20:00 Uhr</p>
+            <p>Sonn- und Feiertags von 11:30 Uhr - 19:00 Uhr</p>
+            <br/>
+            <p>Wir machen Betriebsferien vom 22.08 - 06.09</p>
         </v-container>
         <v-container class="d-flex flex-column align-center pt-10 pb-10">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2655.8713398337436!2d8.092477051182762!3d48.26685045002537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41090f8fe230b2eb%3A0xf89fc1a6b17b199a!2sRestaurant%20Waldsee-Terrasse!5e0!3m2!1sen!2sde!4v1646768577357!5m2!1sen!2sde" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
