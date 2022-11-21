@@ -26,7 +26,9 @@ export default {
             { label: 'Kartoffelrahmsuppe', price: '5,20', sides: ''},
             { label: 'Kartoffelrahmsuppe', price: '6,20', sides: 'mit Würstchen'},
             { label: 'Kartoffelrahmsuppe', price: '6,20', sides: 'mit Räucherlachsstreifen'},
-            { label: 'Kraftbrühe', price: '5,20', sides: 'mit Flädle'}
+            { label: 'Kraftbrühe', price: '5,20', sides: 'mit Flädle'},
+            { label: 'Kürbissuppe', price: '5,80', sides: 'mit Ingwer & Kokosmilch'},
+            { label: 'Maronensuppe', price: '6,50', sides: 'mit Speck'}
         ]
     })
 }

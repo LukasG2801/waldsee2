@@ -26,8 +26,8 @@ export default {
             { label: 'Paniertes Schnitzel', price: '14,80', sides: 'mit Katoffelsalat'},
             { label: 'Paniertes Schnitzel', price: '14,80', sides: 'mit hausgemachten Spätzle'},
             { label: 'Paniertes Schnitzel', price: '14,80', sides: 'mit Pommes frites'},
-            { label: 'Schweinesteak', price: '16,80', sides: 'mit Champignons à la Crème, hausgemachte Spätzle'},
-            { label: 'Schweinesteak', price: '16,80', sides: 'mit Paprikasauce, Pommes frites'},
+            { label: 'Schweinesteak', price: '17,80', sides: 'mit Champignons à la Crème, hausgemachte Spätzle'},
+            { label: 'Schweinesteak', price: '17,80', sides: 'mit Paprikasauce, Pommes frites'},
         ]
     })
 }

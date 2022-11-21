@@ -27,8 +27,8 @@ export default {
             { label: 'Gebratene Wurst', price: '8,50', sides: 'mit Kartoffelsalat oder Pommes frites'},
             { label: 'Currywurst', price: '4,80', sides: 'mit Baguette'},
             { label: 'Currywurst', price: '8,80', sides: 'mit Kartoffelsalat oder Pommes frites'},
-            { label: 'Frische Bratwürste', price: '8,80', sides: 'mit Zwiebeln und Brot'},
-            { label: 'Frische Bratwürste', price: '11,80', sides: 'mit Zwiebeln und Kartoffelsalat oder Pommes frites'},
+            { label: 'Frische Bratwürste', price: '9,80', sides: 'mit Zwiebeln und Brot'},
+            { label: 'Frische Bratwürste', price: '13,80', sides: 'mit Zwiebeln und Kartoffelsalat oder Pommes frites'},
         ]
     })
 }

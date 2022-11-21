@@ -23,10 +23,10 @@
 export default {
     data: () => ({
         salads: [
-            { label: 'Spaghetti con aglio e peperoncini  – vegetarisch', price: '12,80', sides: 'mit Tomaten, Paprika, Zucchini, Champignons, Oliven, Peperoni, Knoblauch, Parmesan'},
-            { label: 'Spaghetti con aglio e peperoncini mit gebratener Hähnchenbrust', price: '16,80', sides: 'Tomaten, Paprika, Zucchini, Champignons, Oliven, Peperoni, Knoblauch, Parmesan'},
-            { label: 'Spaghetti con aglio e peperoncini mit gebratenem Lachssteak, Doradenfilet, Garnele', price: '22,80', sides: 'Tomaten, Paprika, Zucchini, Champignons, Oliven, Peperoni, Knoblauch, Parmesan'},
-            { label: 'Spaghetti con aglio e peperoncini mit gebratenem Lammfilet ', price: '22,80', sides: 'Tomaten, Paprika, Zucchini, Champignons, Oliven, Peperoni, Knoblauch, Parmesan'},
+            { label: 'Spaghetti con aglio e peperoncini  – vegetarisch', price: '13,80', sides: 'mit Tomaten, Paprika, Zucchini, Champignons, Oliven, Peperoni, Knoblauch, Parmesan'},
+            { label: 'Spaghetti con aglio e peperoncini mit gebratener Hähnchenbrust', price: '17,80', sides: 'Tomaten, Paprika, Zucchini, Champignons, Oliven, Peperoni, Knoblauch, Parmesan'},
+            { label: 'Spaghetti con aglio e peperoncini mit gebratenem Lachssteak, Doradenfilet, Garnele', price: '24,80', sides: 'Tomaten, Paprika, Zucchini, Champignons, Oliven, Peperoni, Knoblauch, Parmesan'},
+            { label: 'Spaghetti con aglio e peperoncini mit gebratenem Lammfilet ', price: '24,80', sides: 'Tomaten, Paprika, Zucchini, Champignons, Oliven, Peperoni, Knoblauch, Parmesan'},
         ]
     })
 }

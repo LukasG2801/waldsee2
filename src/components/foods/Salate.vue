@@ -23,16 +23,16 @@
 export default {
     data: () => ({
         salads: [
-            { label: 'Kleiner Salatteller', price: '5,20', sides: 'mit Rohkost- und Blattsalaten'},
-            { label: 'Großer Salatteller', price: '8,80', sides: 'mit Rohkost- und Blattsalaten'},
-            { label: 'Salatteller', price: '14,80', sides: 'mit Rohkost- und Blattsalaten, Frischkäse gefüllte Röstirollen'},
-            { label: 'Salatteller "ASIA"', price: '14,80', sides: 'Blattsalate mit Frühlingsrollen, warmes Wokgemüse und Chili-Dip'},
-            { label: 'Salatteller mit Schnitzelstreifen', price: '15,80', sides: 'Rohkost- und Blattsalate, Kräuter-Dip'},
-            { label: 'Salatteller "SOMMERZEIT"', price: '15,80', sides: 'Rohkost- und Blattsalate, Hähnchenbrust, Kräuter-Dip'},
-            { label: 'Salatteller mit Zanderknusperlis', price: '15,80', sides: 'Rohkost- und Blattsalate, Honig-Senf-Dip'},
-            { label: 'Salatteller "WALDSEE"', price: '16,80', sides: 'Rohkost- und Blattsalate, Räucherlachs, Garnelen, Zanderknusperlis, Tintenfischringe' },
-            { label: 'Salatteller', price: '19,80', sides: 'mit gebratenem Lachssteak, Doradenfilet, Garnele, Rohkost- und Blattsalate, Kräuter-Dip, Honig-Senf-Dip'},
-            { label: 'Salatteller', price: '19,80', sides: 'mit gebratenem Lammfilet, Rohkost- und Blattsalate, mediterranes Gemüse'}
+            { label: 'Kleiner Salatteller', price: '5,70', sides: 'mit Rohkost- und Blattsalaten'},
+            { label: 'Großer Salatteller', price: '9,80', sides: 'mit Rohkost- und Blattsalaten'},
+            { label: 'Salatteller', price: '15,80', sides: 'mit Rohkost- und Blattsalaten, Frischkäse gefüllte Röstirollen'},
+            { label: 'Salatteller "ASIA"', price: '15,80', sides: 'Blattsalate mit Frühlingsrollen, warmes Wokgemüse und Chili-Dip'},
+            { label: 'Salatteller mit Schnitzelstreifen', price: '16,80', sides: 'Rohkost- und Blattsalate, Kräuter-Dip'},
+            { label: 'Salatteller "SOMMERZEIT"', price: '16,80', sides: 'Rohkost- und Blattsalate, Hähnchenbrust, Kräuter-Dip'},
+            { label: 'Salatteller mit Zanderknusperlis', price: '16,80', sides: 'Rohkost- und Blattsalate, Honig-Senf-Dip'},
+            { label: 'Salatteller "WALDSEE"', price: '17,80', sides: 'Rohkost- und Blattsalate, Räucherlachs, Garnelen, Zanderknusperlis, Tintenfischringe' },
+            { label: 'Salatteller', price: '20,80', sides: 'mit gebratenem Lachssteak, Doradenfilet, Garnele, Rohkost- und Blattsalate, Kräuter-Dip, Honig-Senf-Dip'},
+            { label: 'Salatteller', price: '20,80', sides: 'mit gebratenem Lammfilet, Rohkost- und Blattsalate, mediterranes Gemüse'}
         ]
     })
 }

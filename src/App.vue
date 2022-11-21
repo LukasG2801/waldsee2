@@ -37,7 +37,6 @@
 
         <router-link class="app-bar-link" to="/">{{ $t('AppBar.Link.Welcome') }}</router-link>
         <router-link class="app-bar-link" to="/food">{{ $t('AppBar.Link.Menu') }}</router-link>
-        <router-link class="app-bar-link" to="/drinks">{{ $t('AppBar.Link.Drinks') }}</router-link>
         
         <v-spacer class="wl-appbar-spacer"/>
 
@@ -56,7 +55,6 @@
         
         <v-spacer/>
         
-        <router-link class="app-bar-link" to="/imprint">{{ $t('AppBar.Link.Career') }}</router-link>
         <router-link class="app-bar-link" to="/contact">{{ $t('AppBar.Link.Contact') }}</router-link>
         <router-link class="app-bar-link" to="/imprint">{{ $t('AppBar.Link.Impressum') }}</router-link>
       </v-app-bar>

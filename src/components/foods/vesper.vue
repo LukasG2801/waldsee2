@@ -25,9 +25,9 @@ export default {
         salads: [
             { label: 'Wurstsalat', price: '9,80', sides: ''},
             { label: 'Straßburger Wurstsalat', price: '9,80', sides: ''},
-            { label: 'Wurstsalat', price: '12,80', sides: 'mit Rosmarinkartoffeln und Kräuter-Dip'},
-            { label: 'Strammer Max', price: '11,80', sides: 'mit Bauernbrot, Spiegelei, rohem Schinken'},
-            { label: 'Rindfleischsalat vom Tafelspitz', price: '13,80', sides: 'mit Rosmarinkartoffeln, Kräuter-Dip'},
+            { label: 'Wurstsalat', price: '13,80', sides: 'mit Rosmarinkartoffeln und Kräuter-Dip'},
+            { label: 'Strammer Max', price: '12,80', sides: 'mit Bauernbrot, Spiegelei, rohem Schinken'},
+            { label: 'Rindfleischsalat vom Tafelspitz', price: '14,80', sides: 'mit Rosmarinkartoffeln, Kräuter-Dip'},
         ]
     })
 }

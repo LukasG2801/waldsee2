@@ -24,8 +24,10 @@ export default {
     data: () => ({
         salads: [
             { label: 'Rinderzunge in Madeira', price: '17,80', sides: 'mit hausgemachten Spätzle'},
-            { label: 'Rumpsteak', price: '24,80', sides: 'mit Kräuterbutter, Zwiebeln, Pommes frites'},
-            { label: 'Rumpsteak', price: '24,80', sides: 'in Pfefferrahmsauce mit hausgemachten Spätzle'},
+            { label: 'Tafelspitz', price: '19,80', sides: 'mit Meerrettichsauce, Salzkartoffeln und roter Beete'},
+            { label: 'Geschmorte Ochsenbacken', price: '21,80', sides: 'in Portwein-Jus mit Rotkraut & Spätzle'},
+            { label: 'Rumpsteak', price: '25,80', sides: 'mit Kräuterbutter, Zwiebeln, Pommes frites'},
+            { label: 'Rumpsteak', price: '25,80', sides: 'in Pfefferrahmsauce mit hausgemachten Spätzle'}
         ]
     })
 }

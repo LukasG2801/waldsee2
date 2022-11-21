@@ -23,10 +23,10 @@
 export default {
     data: () => ({
         salads: [
-            { label: 'Asiatischer Gemüseteller', price: '15,80', sides: 'mit Basmatireis und Frühlingsrollen'},
-            { label: 'Asiatischer Gemüseteller', price: '16,80', sides: 'mit Basmatireis und Hähnchenbruststreifen'},
-            { label: 'Asiatischer Gemüseteller', price: '17,80', sides: 'mit Basmatireis und Zanderknusperlis'},
-            { label: 'Asiatischer Gemüseteller', price: '22,80', sides: 'mit Basmatireis, gebratenem Lachs, Doradenfilet und Garnele'}
+            { label: 'Asiatischer Gemüseteller', price: '16,80', sides: 'mit Basmatireis und Frühlingsrollen'},
+            { label: 'Asiatischer Gemüseteller', price: '17,80', sides: 'mit Basmatireis und Hähnchenbruststreifen'},
+            { label: 'Asiatischer Gemüseteller', price: '18,80', sides: 'mit Basmatireis und Zanderknusperlis'},
+            { label: 'Asiatischer Gemüseteller', price: '23,80', sides: 'mit Basmatireis, gebratenem Lachs, Doradenfilet und Garnele'}
         ]
     })
 }

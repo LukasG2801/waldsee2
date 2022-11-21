@@ -23,8 +23,8 @@
 export default {
     data: () => ({
         salads: [
-            { label: 'Hähnchenbrust', price: '16,80', sides: 'mit Champignons à la Crème, hausgemachte Spätzle'},
-            { label: 'Hähnchenbrust', price: '16,80', sides: 'mit Paprikasauce, Pommes frites'}
+            { label: 'Hähnchenbrust', price: '17,80', sides: 'mit Champignons à la Crème, hausgemachte Spätzle'},
+            { label: 'Hähnchenbrust', price: '17,80', sides: 'mit Paprikasauce, Pommes frites'}
         ]
     })
 }

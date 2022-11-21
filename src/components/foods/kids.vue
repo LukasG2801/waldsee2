@@ -23,13 +23,13 @@
 export default {
     data: () => ({
         salads: [
-            { label: 'Portion Pommes', price: '4,50', sides: 'mit Ketchup'},
-            { label: 'Spätzle', price: '5,00', sides: 'mit Rahmsauce'},
-            { label: 'Spaghetti', price: '6,80', sides: 'mit Tomatensauce'},
-            { label: 'Fischstäbchen', price: '6,80', sides: 'mit Kartoffelsalat'},
-            { label: 'Chicken Nuggets', price: '7,80', sides: 'mit Pommes frites'},
-            { label: 'Kleines Schnitzel', price: '8,80', sides: 'mit Pommes frites'},
-            { label: 'Rahmschnitzel', price: '8,80', sides: 'mit Spätzle'},
+            { label: 'Portion Pommes', price: '4,80', sides: 'mit Ketchup'},
+            { label: 'Spätzle', price: '5,80', sides: 'mit Rahmsauce'},
+            { label: 'Spaghetti', price: '7,80', sides: 'mit Tomatensauce'},
+            { label: 'Fischstäbchen', price: '7,80', sides: 'mit Kartoffelsalat'},
+            { label: 'Chicken Nuggets', price: '8,80', sides: 'mit Pommes frites'},
+            { label: 'Kleines Schnitzel', price: '9,80', sides: 'mit Pommes frites'},
+            { label: 'Rahmschnitzel', price: '9,80', sides: 'mit Spätzle'},
         ]
     })
 }

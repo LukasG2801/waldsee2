@@ -23,10 +23,10 @@
 export default {
     data: () => ({
         eis: [
-            { label: '1 Kugel Eis', price: '1,20', sides: ''},
-            { label: 'Kinder-Eis', price: '2,80', sides: '2 Kugeln'},
-            { label: 'Gemischtes Eis', price: '3,60', sides: '3 Kugeln'},
-            { label: 'Gemischtes Eis mit Sahne', price: '4,40', sides: '3 Kugeln'},
+            { label: '1 Kugel Eis', price: '1,50', sides: ''},
+            { label: 'Kinder-Eis', price: '3,00', sides: '2 Kugeln'},
+            { label: 'Gemischtes Eis', price: '4,50', sides: '3 Kugeln'},
+            { label: 'Gemischtes Eis mit Sahne', price: '5,30', sides: '3 Kugeln'},
             { label: 'Portion Sahne', price: '0,80', sides: ''},
             { label: 'Eiskaffee', price: '5,20', sides: ''},
             { label: 'Eisschokolade', price: '5,20', sides: ''},
