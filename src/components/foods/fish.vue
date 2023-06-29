@@ -13,7 +13,7 @@
                 ></v-list-item-title>
                                 
                 <v-list-item-subtitle class="cursive" style="margin-top: 5px">{{ fish.sides }}</v-list-item-subtitle>
-                <v-list-item-subtitle style="margin-top: 5px">{{ fish.price }} €</v-list-item-subtitle>
+                <!-- <v-list-item-subtitle style="margin-top: 5px">{{ fish.price }} €</v-list-item-subtitle> -->
                            
             </v-list-item-content>
         </v-list-item>
