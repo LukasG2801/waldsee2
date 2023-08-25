@@ -9,10 +9,10 @@
                                 
                 <v-list-item-title
                     v-text="soup.label"
-                    class="menu-dish-title"
+                    class="menu-dish-title text-wrap"
                 ></v-list-item-title>
                                 
-                <v-list-item-subtitle class="cursive" style="margin-top: 5px">{{ soup.sides }}</v-list-item-subtitle>
+                <v-list-item-subtitle class="cursive text-wrap" style="margin-top: 5px">{{ soup.sides }}</v-list-item-subtitle>
                 <!-- <v-list-item-subtitle style="margin-top: 5px">{{ soup.price }} €</v-list-item-subtitle> -->
                            
             </v-list-item-content>

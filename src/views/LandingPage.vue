@@ -10,7 +10,7 @@
             onscroll="onScrollMainContainer"
         >
         </v-container>
-
+        
         <Welcome/>
         <Location/>
         <FoodIntro/>
@@ -30,7 +30,8 @@
     export default {
         data: () => ({
             rating_carousel: 0,
-            foodPartActive: false
+            foodPartActive: false,
+            dialog: false
         }),
 
         computed: {
@@ -72,6 +73,10 @@
                 }
             }
         },
+
+        onCreated() {
+            this.dialog = true
+        }
     }
 </script>
 

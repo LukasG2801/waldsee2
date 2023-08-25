@@ -31,7 +31,7 @@
                 light
             >
                 <v-spacer/>
-                <v-tooltip bottom>
+                <!-- <v-tooltip bottom>
                     <template v-slot:activator="{ on, attrs }">
                         <v-btn
                             icon
@@ -49,7 +49,7 @@
                     </template>
                     
                     <span>Als PDF anzeigen</span>
-                </v-tooltip>
+                </v-tooltip> -->
             </v-toolbar>
 
             <v-container class="d-flex pl-10">
@@ -89,7 +89,7 @@
                     </v-list>
                 </v-tab-item>
             </v-tabs> -->
-            <v-tabs 
+            <!-- <v-tabs 
                 vertical
                 v-model="tab"
             >
@@ -110,7 +110,19 @@
                     <component v-bind:is="categorie.component"/>
                 </v-tab-item>
                 </v-tabs-items>
-            </v-tabs>
+            </v-tabs> -->
+
+            <v-expansion-panels>
+                <v-expansion-panel
+                    v-for="(categorie, i) in fix_dish_categories"
+                    :key="i"
+                >
+                    <v-expansion-panel-header>{{ categorie.label }}</v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                        <component v-bind:is="categorie.component"></component>
+                    </v-expansion-panel-content>
+                </v-expansion-panel>
+            </v-expansion-panels>
 
             </v-container>
         </v-container>
