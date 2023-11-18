@@ -58,7 +58,7 @@
         </v-container>
 
         <v-container class="d-flex flex-column align-center pt-10">
-            <p>Vom 21.08 bis zum 05.09 haben wir Betriebsferien</p>
+            <!-- <p>Vom 21.08 bis zum 05.09 haben wir Betriebsferien</p> -->
             <br/>
             <p>
                 Montag & Dienstag: Ruhetag

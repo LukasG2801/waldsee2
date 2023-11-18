@@ -14,7 +14,7 @@
             <p style="padding-top: 5vh;">Wir freuen uns, Sie bei uns, in der Waldsee Terrasse begrüßen zu dürfen. Neben unserem einzigartigen Ambiente bieten 
                 wir ihnen regionale und saisonale Köstlichkeiten.
             </p>
-            <p style="padding-bottom: 2vh; font-weight: bold;">Vom 21.08.2023 bis zum 05.09.2023 haben wir aufgrund von Betriebsferien geschlossen.</p>
+            <!-- <p style="padding-bottom: 2vh; font-weight: bold;">Vom 21.08.2023 bis zum 05.09.2023 haben wir aufgrund von Betriebsferien geschlossen.</p> -->
             <p>Unsere Öffnungszeiten finden Sie hier:</p>
             <v-btn
                 color="secondary"
