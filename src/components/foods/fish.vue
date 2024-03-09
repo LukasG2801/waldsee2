@@ -23,7 +23,7 @@
 export default {
     data: () => ({
         fish: [
-            { label: 'Gebratenes Lachssteak, Doradenfilet und Garnele', price: '24,80', sides: 'Rosmarinkartoffeln, mediterranes Gemüse, Kräuter-Dip'}
+            { label: 'Gebratenes Lachssteak und Doradenfilet', price: '24,80', sides: 'Rosmarinkartoffeln, mediterranes Gemüse, Kräuter-Dip'}
         ]
     })
 }
