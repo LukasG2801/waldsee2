@@ -58,7 +58,7 @@
         </v-container>
 
         <v-container class="d-flex flex-column align-center pt-10">
-            <p>Vom 18.08.2025 bis zum einschließlich 02.09.2025 haben wir Betriebsferien</p>
+            <!-- <p>Vom 18.08.2025 bis zum einschließlich 02.09.2025 haben wir Betriebsferien</p> -->
             <br/>
             <p>
                 Montag & Dienstag: Ruhetag
