@@ -58,30 +58,32 @@
         </v-container>
 
         <v-container class="d-flex flex-column align-center pt-10">
-            <!-- <p>Vom 18.08.2025 bis zum einschließlich 02.09.2025 haben wir Betriebsferien</p> -->
+            <p>Vom 03.11.2025 bis zum einschließlich 13.11.2025 haben wir geschlossen</p>
+            <br/>
+            <p>Ab Freitag, den 14. November wieder geöffnet</p>
+            <br/>
+            <h2>Neue Öffnungszeiten</h2>
             <br/>
             <p>
                 Montag & Dienstag: Ruhetag
             </p>
             <p>
-                Mittwoch: 11:00 Uhr - 21:00 Uhr
+                Mittwoch: 11:00 Uhr - 18:00 Uhr
             </p>
             <P>
-                Donnerstag: 11:00 Uhr - 21:00 Uhr
+                Donnerstag: 11:00 Uhr - 18:00 Uhr
             </P>
             <p>
-                Freitag: 11:00 Uhr - 21:00 Uhr
+                Freitag: 11:00 Uhr - 18:00 Uhr
             </p>
             <p>
-                Samstag: 11:00 Uhr - 21:00 Uhr
+                Samstag: 11:00 Uhr - 18:00 Uhr
             </p>
             <p>
-                Sonn- und Feiertags: 11:00 Uhr - 20:00 Uhr
+                Sonntag: 11:00 Uhr - 18:00 Uhr
             </p>
             <br/>
-            <p>Durchgehend warme Küche:</p>
-            <p>Werktags von 11:30 Uhr - 20:00 Uhr</p>
-            <p>Sonn- und Feiertags von 11:30 Uhr - 19:00 Uhr</p>
+            <p>Die Küche ist von 11.00 Uhr - 17.00 Uhr geöffnet</p>
             <br/>
         </v-container>
         <v-container class="d-flex flex-column align-center pt-10 pb-10">
