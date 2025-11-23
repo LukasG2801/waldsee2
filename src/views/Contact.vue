@@ -58,9 +58,9 @@
         </v-container>
 
         <v-container class="d-flex flex-column align-center pt-10">
-            <p>Vom 03.11.2025 bis zum einschließlich 13.11.2025 haben wir geschlossen</p>
+            <!-- <p>Vom 03.11.2025 bis zum einschließlich 13.11.2025 haben wir geschlossen</p>
             <br/>
-            <p>Ab Freitag, den 14. November wieder geöffnet</p>
+            <p>Ab Freitag, den 14. November wieder geöffnet</p> -->
             <br/>
             <h2>Neue Öffnungszeiten</h2>
             <br/>
